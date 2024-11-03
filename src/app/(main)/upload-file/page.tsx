@@ -7,7 +7,7 @@ import Link from "next/link";
 export default function UploadFile() {
   return (
     <>
-      <div className="flex flex-col items-center justify-center min-h-screen bg-black/95">
+      <div className="flex  px-5 flex-col items-center justify-center min-h-screen bg-black/95">
         <div className="w-full md:w-1/2 lg:w-1/3 mx-auto bg-white p-6 rounded-lg shadow-md">
           <h1 className="text-2xl font-bold text-center mb-4">
             Upload your Id Proof
