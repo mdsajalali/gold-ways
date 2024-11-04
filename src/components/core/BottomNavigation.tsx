@@ -1,5 +1,5 @@
 import Link from "next/link";
-export default function Navigation() {
+export default function BottomNavigation() {
   return (
     <div className="fixed bottom-0 md:hidden left-0 z-10 w-full h-16 bg-white border-t border-gray-200 ">
       <div className="grid h-full max-w-lg grid-cols-5 mx-auto font-medium">
