@@ -26,7 +26,7 @@ const Dashboard = () => {
             </p>
           </div>
         </div>
-        <div className="mt-6 flex flex-col-reverse justify-stretch space-y-4 space-y-reverse sm:flex-row-reverse sm:justify-end sm:space-x-3 sm:space-y-0 sm:space-x-reverse md:mt-0 md:flex-row md:space-x-3">
+        <div className="mt-6 py-10 flex flex-col-reverse justify-stretch space-y-4 space-y-reverse sm:flex-row-reverse sm:justify-end sm:space-x-3 sm:space-y-0 sm:space-x-reverse md:mt-0 md:flex-row md:space-x-3">
           <div className="mt-4 p-4 bg-white shadow-md rounded-lg">
             <p className="text-lg font-medium text-zinc-950">
               Your total balance{" "}

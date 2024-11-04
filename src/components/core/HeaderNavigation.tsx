@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function HeaderNavigation() {
   return (
-    <nav className="flex-no-wrap fixed top-0 z-10  w-full items-center justify-between bg-transparent py-2 shadow-md shadow-black/5 dark:bg-neutral-600 dark:shadow-black/10 lg:flex-wrap lg:justify-start lg:py-4">
+    <nav className="flex-no-wrap fixed top-0 z-[999]  w-full items-center justify-between bg-white py-2 shadow-md shadow-black/5 dark:bg-neutral-600 dark:shadow-black/10 lg:flex-wrap lg:justify-start lg:py-4">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <div
           className=" w-full items-center justify-between  md:w-auto"
