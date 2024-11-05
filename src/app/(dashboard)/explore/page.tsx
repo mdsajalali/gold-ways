@@ -77,7 +77,7 @@ export default function Explore() {
 
   return (
     <div className={darkMode ? "dark" : ""}>
-      <div className="min-h-screen p-4 bg-gray-50 dark:bg-gray-900">
+      <div className="min-h-screen container mx-auto p-4   dark:bg-gray-900">
         {/* Dashboard Header */}
         <header className="flex justify-between items-center p-6 bg-gold dark:bg-darkGold">
           <h1 className="text-3xl font-bold text-black dark:text-white">
