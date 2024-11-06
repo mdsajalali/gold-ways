@@ -24,7 +24,7 @@ Chart.register(
   BarElement,
   Title,
   Tooltip,
-  Legend
+  Legend,
 );
 
 export default function Explore() {
@@ -77,24 +77,24 @@ export default function Explore() {
 
   return (
     <div className={darkMode ? "dark" : ""}>
-      <div className="min-h-screen container mx-auto p-4   dark:bg-gray-900">
+      <div className="container mx-auto min-h-screen p-4 dark:bg-gray-900">
         {/* Dashboard Header */}
-        <header className="flex justify-between items-center p-6 bg-gold dark:bg-darkGold">
+        <header className="bg-gold dark:bg-darkGold flex items-center justify-between p-6">
           <h1 className="text-3xl font-bold text-black dark:text-white">
             Gold Trading Dashboard
           </h1>
           <button
             onClick={toggleDarkMode}
-            className="text-sm px-4 py-2 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded-md shadow"
+            className="rounded-md bg-white px-4 py-2 text-sm text-gray-900 shadow dark:bg-gray-800 dark:text-white"
           >
             {darkMode ? "Light Mode" : "Dark Mode"}
           </button>
         </header>
 
         {/* Overview Section */}
-        <section className="p-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+        <section className="grid grid-cols-1 gap-6 p-6 md:grid-cols-2">
           {/* Total Assets */}
-          <div className="bg-white dark:bg-gray-800 shadow-lg rounded-lg p-6">
+          <div className="rounded-lg bg-white p-6 shadow-lg dark:bg-gray-800">
             <h2 className="text-xl font-bold text-gray-900 dark:text-white">
               Total Assets
             </h2>
@@ -104,7 +104,7 @@ export default function Explore() {
           </div>
 
           {/* Financial Overview */}
-          <div className="bg-white dark:bg-gray-800 shadow-lg rounded-lg p-6">
+          <div className="rounded-lg bg-white p-6 shadow-lg dark:bg-gray-800">
             <h2 className="text-xl font-bold text-gray-900 dark:text-white">
               Financial Overview
             </h2>
@@ -114,52 +114,52 @@ export default function Explore() {
           </div>
 
           {/* Active Loans */}
-          <div className="bg-white dark:bg-gray-800 shadow-lg rounded-lg p-6">
+          <div className="rounded-lg bg-white p-6 shadow-lg dark:bg-gray-800">
             <h2 className="text-xl font-bold text-gray-900 dark:text-white">
               Active Loans
             </h2>
-            <p className="text-2xl text-red-500 dark:text-red-400 mt-4">
+            <p className="mt-4 text-2xl text-red-500 dark:text-red-400">
               ৳ 50,000
             </p>
-            <p className="text-sm text-gray-500 mt-2">
+            <p className="mt-2 text-sm text-gray-500">
               Next payment due: 20 Oct 2024
             </p>
           </div>
 
           {/* Rental Income */}
-          <div className="bg-white dark:bg-gray-800 shadow-lg rounded-lg p-6">
+          <div className="rounded-lg bg-white p-6 shadow-lg dark:bg-gray-800">
             <h2 className="text-xl font-bold text-gray-900 dark:text-white">
               Rental Income
             </h2>
-            <p className="text-2xl text-green-500 dark:text-green-400 mt-4">
+            <p className="mt-4 text-2xl text-green-500 dark:text-green-400">
               ৳ 15,000
             </p>
-            <p className="text-sm text-gray-500 mt-2">This month</p>
+            <p className="mt-2 text-sm text-gray-500">This month</p>
           </div>
 
           {/* Upcoming Payments */}
-          <div className="md:col-span-2 bg-white dark:bg-gray-800 shadow-lg rounded-lg p-6">
+          <div className="rounded-lg bg-white p-6 shadow-lg dark:bg-gray-800 md:col-span-2">
             <h2 className="text-xl font-bold text-gray-900 dark:text-white">
               Upcoming Scheduled Payments
             </h2>
-            <table className="w-full mt-4 text-left text-sm text-gray-500 dark:text-gray-400">
+            <table className="mt-4 w-full text-left text-sm text-gray-500 dark:text-gray-400">
               <thead>
                 <tr>
-                  <th className="py-2 px-4">Date</th>
-                  <th className="py-2 px-4">Amount</th>
-                  <th className="py-2 px-4">Status</th>
+                  <th className="px-4 py-2">Date</th>
+                  <th className="px-4 py-2">Amount</th>
+                  <th className="px-4 py-2">Status</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td className="py-2 px-4">20 Oct 2024</td>
-                  <td className="py-2 px-4">৳ 5,000</td>
-                  <td className="py-2 px-4 text-yellow-500">Pending</td>
+                  <td className="px-4 py-2">20 Oct 2024</td>
+                  <td className="px-4 py-2">৳ 5,000</td>
+                  <td className="px-4 py-2 text-yellow-500">Pending</td>
                 </tr>
                 <tr>
-                  <td className="py-2 px-4">25 Oct 2024</td>
-                  <td className="py-2 px-4">৳ 10,000</td>
-                  <td className="py-2 px-4 text-yellow-500">Pending</td>
+                  <td className="px-4 py-2">25 Oct 2024</td>
+                  <td className="px-4 py-2">৳ 10,000</td>
+                  <td className="px-4 py-2 text-yellow-500">Pending</td>
                 </tr>
               </tbody>
             </table>
@@ -168,17 +168,17 @@ export default function Explore() {
 
         {/* Quick Access Buttons */}
         <section className="p-6">
-          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
-            <button className="px-4 py-2 bg-yellow-400 text-black rounded-lg shadow-lg hover:bg-yellow-500">
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-4">
+            <button className="rounded-lg bg-yellow-400 px-4 py-2 text-black shadow-lg hover:bg-yellow-500">
               Asset Management
             </button>
-            <button className="px-4 py-2 bg-yellow-400 text-black rounded-lg shadow-lg hover:bg-yellow-500">
+            <button className="rounded-lg bg-yellow-400 px-4 py-2 text-black shadow-lg hover:bg-yellow-500">
               Loan Management
             </button>
-            <button className="px-4 py-2 bg-yellow-400 text-black rounded-lg shadow-lg hover:bg-yellow-500">
+            <button className="rounded-lg bg-yellow-400 px-4 py-2 text-black shadow-lg hover:bg-yellow-500">
               Rental Management
             </button>
-            <button className="px-4 py-2 bg-yellow-400 text-black rounded-lg shadow-lg hover:bg-yellow-500">
+            <button className="rounded-lg bg-yellow-400 px-4 py-2 text-black shadow-lg hover:bg-yellow-500">
               Payment Scheduling
             </button>
           </div>

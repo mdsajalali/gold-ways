@@ -62,18 +62,18 @@ const Services: React.FC = () => {
     <div className="container mx-auto p-6">
       {/* Loan Management Section */}
       <section className="mb-8">
-        <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+        <h2 className="mb-4 text-2xl font-bold text-gray-900 dark:text-white">
           Loan Management
         </h2>
 
         {/* Loan Status Overview Screen */}
-        <div className="bg-white dark:bg-gray-800 shadow-lg rounded-lg p-6 mb-4">
-          <h3 className="text-xl font-semibold mb-4">Loan Status Overview</h3>
+        <div className="mb-4 rounded-lg bg-white p-6 shadow-lg dark:bg-gray-800">
+          <h3 className="mb-4 text-xl font-semibold">Loan Status Overview</h3>
           <ul className="space-y-2">
             {loanStatus.map((loan, index) => (
               <li
                 key={index}
-                className="border-b py-2 flex justify-between items-center"
+                className="flex items-center justify-between border-b py-2"
               >
                 <span className="text-gray-900 dark:text-white">
                   {loan.amount} - Status: {loan.status}
@@ -91,8 +91,8 @@ const Services: React.FC = () => {
 
         {/* Loan Details Screen */}
         {selectedLoan && (
-          <div className="bg-white dark:bg-gray-800 shadow-lg rounded-lg p-6 mb-4">
-            <h3 className="text-xl font-semibold mb-4">Loan Details</h3>
+          <div className="mb-4 rounded-lg bg-white p-6 shadow-lg dark:bg-gray-800">
+            <h3 className="mb-4 text-xl font-semibold">Loan Details</h3>
             <p className="text-gray-900 dark:text-white">
               Loan Amount: {selectedLoan.amount}
             </p>
@@ -110,7 +110,7 @@ const Services: React.FC = () => {
             </p>
             <button
               onClick={() => setSelectedLoan(null)}
-              className="mt-2 px-4 py-2 bg-red-600 text-white rounded-lg shadow-lg hover:bg-red-500"
+              className="mt-2 rounded-lg bg-red-600 px-4 py-2 text-white shadow-lg hover:bg-red-500"
             >
               Close
             </button>
@@ -120,18 +120,18 @@ const Services: React.FC = () => {
 
       {/* Rental Management Section */}
       <section className="mb-8">
-        <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+        <h2 className="mb-4 text-2xl font-bold text-gray-900 dark:text-white">
           Rental Management
         </h2>
 
         {/* Rental Overview Screen */}
-        <div className="bg-white dark:bg-gray-800 shadow-lg rounded-lg p-6 mb-4">
-          <h3 className="text-xl font-semibold mb-4">Rental Overview</h3>
+        <div className="mb-4 rounded-lg bg-white p-6 shadow-lg dark:bg-gray-800">
+          <h3 className="mb-4 text-xl font-semibold">Rental Overview</h3>
           <ul className="space-y-2">
             {rentedAssets.map((rental, index) => (
               <li
                 key={index}
-                className="border-b py-2 flex justify-between items-center"
+                className="flex items-center justify-between border-b py-2"
               >
                 <span className="text-gray-900 dark:text-white">
                   {rental.name} - Income: {rental.income}
@@ -149,8 +149,8 @@ const Services: React.FC = () => {
 
         {/* Rental Agreement Screen */}
         {selectedRental && (
-          <div className="bg-white dark:bg-gray-800 shadow-lg rounded-lg p-6 mb-4">
-            <h3 className="text-xl font-semibold mb-4">Rental Agreement</h3>
+          <div className="mb-4 rounded-lg bg-white p-6 shadow-lg dark:bg-gray-800">
+            <h3 className="mb-4 text-xl font-semibold">Rental Agreement</h3>
             <p className="text-gray-900 dark:text-white">
               Asset: {selectedRental.name}
             </p>
@@ -165,7 +165,7 @@ const Services: React.FC = () => {
             </p>
             <button
               onClick={() => setSelectedRental(null)}
-              className="mt-2 px-4 py-2 bg-red-600 text-white rounded-lg shadow-lg hover:bg-red-500"
+              className="mt-2 rounded-lg bg-red-600 px-4 py-2 text-white shadow-lg hover:bg-red-500"
             >
               Close
             </button>
@@ -175,17 +175,17 @@ const Services: React.FC = () => {
 
       {/* Payment Scheduling Section */}
       <section className="mb-8">
-        <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+        <h2 className="mb-4 text-2xl font-bold text-gray-900 dark:text-white">
           Payment Scheduling
         </h2>
 
         {/* Payment Schedule Setup Screen */}
-        <div className="bg-white dark:bg-gray-800 shadow-lg rounded-lg p-6 mb-4">
-          <h3 className="text-xl font-semibold mb-4">Payment Schedule Setup</h3>
+        <div className="mb-4 rounded-lg bg-white p-6 shadow-lg dark:bg-gray-800">
+          <h3 className="mb-4 text-xl font-semibold">Payment Schedule Setup</h3>
           <select
             value={paymentType}
             onChange={(e) => setPaymentType(e.target.value)}
-            className="border p-2 rounded w-full mb-4"
+            className="mb-4 w-full rounded border p-2"
           >
             <option value="Loan">Loan</option>
             <option value="Asset Purchase">Asset Purchase</option>
@@ -194,9 +194,9 @@ const Services: React.FC = () => {
             type="date"
             value={paymentDate}
             onChange={(e) => setPaymentDate(e.target.value)}
-            className="border p-2 rounded w-full mb-4"
+            className="mb-4 w-full rounded border p-2"
           />
-          <div className="flex items-center mb-4">
+          <div className="mb-4 flex items-center">
             <input
               type="checkbox"
               checked={recurring}
@@ -205,7 +205,7 @@ const Services: React.FC = () => {
             />
             <label>Recurring Payment</label>
           </div>
-          <div className="flex items-center mb-4">
+          <div className="mb-4 flex items-center">
             <input
               type="checkbox"
               checked={reminder}
@@ -216,15 +216,15 @@ const Services: React.FC = () => {
           </div>
           <button
             onClick={handleSchedulePayment}
-            className="mt-2 px-4 py-2 duration-300 bg-yellow-500 text-black rounded-lg shadow-lg hover:bg-yellow-600"
+            className="mt-2 rounded-lg bg-yellow-500 px-4 py-2 text-black shadow-lg duration-300 hover:bg-yellow-600"
           >
             Schedule Payment
           </button>
         </div>
 
         {/* Payment History Screen */}
-        <div className="bg-white dark:bg-gray-800 shadow-lg rounded-lg p-6 mb-4">
-          <h3 className="text-xl font-semibold mb-4">Payment History</h3>
+        <div className="mb-4 rounded-lg bg-white p-6 shadow-lg dark:bg-gray-800">
+          <h3 className="mb-4 text-xl font-semibold">Payment History</h3>
           <ul className="space-y-2">
             {paymentHistory.map((payment, index) => (
               <li key={index} className="border-b py-2">

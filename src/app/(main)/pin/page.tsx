@@ -36,16 +36,16 @@ export default function PinForm() {
 
   return (
     <>
-      <div className="flex  px-5 flex-col items-center justify-center min-h-screen bg-black/95">
-        <div className="w-full md:w-1/2 lg:w-1/3 mx-auto bg-white p-6 rounded-lg shadow-md">
-          <h1 className="text-2xl font-bold text-center mb-4">ENTER PIN</h1>
+      <div className="flex min-h-screen flex-col items-center justify-center bg-black/95 px-5">
+        <div className="mx-auto w-full rounded-lg bg-white p-6 shadow-md md:w-1/2 lg:w-1/3">
+          <h1 className="mb-4 text-center text-2xl font-bold">ENTER PIN</h1>
           <Form {...form}>
-            <form className="w-full flex flex-col space-y-6">
+            <form className="flex w-full flex-col space-y-6">
               <FormField
                 control={form.control}
                 name="pin"
                 render={({ field }) => (
-                  <FormItem className="flex flex-col items-center ">
+                  <FormItem className="flex flex-col items-center">
                     <FormDescription>goldway@gamil.com</FormDescription>
                     <FormControl>
                       <InputOTP maxLength={6} {...field}>
@@ -70,7 +70,7 @@ export default function PinForm() {
                 href={"/dashboard"}
                 className={`${buttonVariants({
                   variant: "default",
-                })} hover:bg-yellow-500 hover:text-black duration-300`}
+                })} duration-300 hover:bg-yellow-500 hover:text-black`}
               >
                 Continue
               </Link>

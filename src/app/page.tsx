@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const page = () => {
   return (
-    <div className="relative min-h-screen flex flex-col justify-center items-center">
+    <div className="relative flex min-h-screen flex-col items-center justify-center">
       {/* Background Image */}
       <div
         className="absolute inset-0 bg-cover bg-center"
@@ -15,7 +15,7 @@ const page = () => {
 
       {/* Content */}
       <div className="relative z-10 text-center">
-        <h1 className="text-5xl font-bold text-yellow-500 mb-2">
+        <h1 className="mb-2 text-5xl font-bold text-yellow-500">
           GOLD WAYS<sup>®</sup>
         </h1>
         <p className="text-sm text-gray-400">
@@ -25,17 +25,20 @@ const page = () => {
       <br />
 
       <Link href={"/login"}>
-        <Button variant="default" className="relative z-10 hover:bg-yellow-500 hover:text-black duration-300 w-full sm:w-auto">
+        <Button
+          variant="default"
+          className="relative z-10 w-full duration-300 hover:bg-yellow-500 hover:text-black sm:w-auto"
+        >
           Get started
           <ArrowRight className="ml-2 size-4" />
         </Button>
       </Link>
 
       {/* Gold sparkles (Optional: if you want small decorations) */}
-      <div className="absolute bottom-0 left-0 p-4 flex space-x-2">
-        <div className="w-2 h-2 bg-yellow-500 rounded-full animate-pulse"></div>
-        <div className="w-3 h-3 bg-yellow-500 rounded-full animate-pulse delay-200"></div>
-        <div className="w-1 h-1 bg-yellow-500 rounded-full animate-pulse delay-400"></div>
+      <div className="absolute bottom-0 left-0 flex space-x-2 p-4">
+        <div className="h-2 w-2 animate-pulse rounded-full bg-yellow-500"></div>
+        <div className="h-3 w-3 animate-pulse rounded-full bg-yellow-500 delay-200"></div>
+        <div className="delay-400 h-1 w-1 animate-pulse rounded-full bg-yellow-500"></div>
       </div>
     </div>
   );

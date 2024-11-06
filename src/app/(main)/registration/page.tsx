@@ -13,32 +13,32 @@ export default function Page() {
 
   return (
     <div
-      className="relative px-5 flex items-center justify-center min-h-screen bg-cover bg-center"
+      className="relative flex min-h-screen items-center justify-center bg-cover bg-center px-5"
       style={{ backgroundImage: "url('/images/login_banner.jpg')" }}
     >
       {/* Overlay */}
       <div className="absolute inset-0 bg-black opacity-50" />
 
-      <div className="relative z-10 w-full md:w-1/2 lg:w-1/3 mx-auto bg-white/40 p-6 rounded-lg shadow-md">
-        <h1 className="text-2xl font-bold text-center mb-4">Registration</h1>
+      <div className="relative z-10 mx-auto w-full rounded-lg bg-white/40 p-6 shadow-md md:w-1/2 lg:w-1/3">
+        <h1 className="mb-4 text-center text-2xl font-bold">Registration</h1>
         <form className="flex flex-col">
           <input
             type="text"
             name="text"
-            className="px-4 py-3 w-full mt-4 outline-none rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0 text-sm"
+            className="mt-4 w-full rounded-md border-transparent bg-gray-100 px-4 py-3 text-sm outline-none focus:border-gray-500 focus:bg-white focus:ring-0"
             placeholder="Enter Your Name"
           />
           <input
             type="number"
             name="phone"
-            className="px-4 py-3 w-full mt-4 outline-none rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0 text-sm"
+            className="mt-4 w-full rounded-md border-transparent bg-gray-100 px-4 py-3 text-sm outline-none focus:border-gray-500 focus:bg-white focus:ring-0"
             placeholder="Phone Number"
           />
           <div className="relative mt-4">
             <input
               type={showPassword ? "text" : "password"}
               name="password"
-              className="px-4 py-3 w-full outline-none rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0 text-sm"
+              className="w-full rounded-md border-transparent bg-gray-100 px-4 py-3 text-sm outline-none focus:border-gray-500 focus:bg-white focus:ring-0"
               placeholder="Password"
             />
             <button
@@ -56,17 +56,17 @@ export default function Page() {
           <Link href={"/otp"}>
             <button
               type="submit"
-              className="mt-4 hover:bg-yellow-500 hover:text-black px-4 py-3 leading-6 text-base rounded-md border border-transparent bg-black text-amber-100  duration-300 focus:ring-2 focus:ring-black focus:ring-offset-2 cursor-pointer inline-flex w-full justify-center items-center font-medium focus:outline-none"
+              className="mt-4 inline-flex w-full cursor-pointer items-center justify-center rounded-md border border-transparent bg-black px-4 py-3 text-base font-medium leading-6 text-amber-100 duration-300 hover:bg-yellow-500 hover:text-black focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2"
             >
               Registration
             </button>
           </Link>
-          <div className="flex flex-col items-center mt-5">
+          <div className="mt-5 flex flex-col items-center">
             <p className="mt-1 text-xs font-light">
               Already have an account?
               <Link
                 href={"/login"}
-                className="ml-1 font-medium hover:underline text-black"
+                className="ml-1 font-medium text-black hover:underline"
               >
                 Login now
               </Link>

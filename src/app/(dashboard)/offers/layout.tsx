@@ -14,8 +14,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="pt-5 pb-20 md:py-0">
-        <header className="hidden md:block mb-24">
+      <body className="pb-20 pt-5 md:py-0">
+        <header className="mb-24 hidden md:block">
           <HeaderNavigation />
         </header>
         {children}

@@ -5,7 +5,7 @@ import Link from "next/link";
 const Dashboard = () => {
   return (
     <div className="container mx-auto">
-      <div className="md:flex md:items-center md:justify-between md:space-x-5 px-4">
+      <div className="px-4 md:flex md:items-center md:justify-between md:space-x-5">
         <div className="flex items-start space-x-5">
           <div className="flex-shrink-0">
             <div className="relative">
@@ -26,26 +26,26 @@ const Dashboard = () => {
             </p>
           </div>
         </div>
-        <div className="mt-6 py-10 flex flex-col-reverse justify-stretch space-y-4 space-y-reverse sm:flex-row-reverse sm:justify-end sm:space-x-3 sm:space-y-0 sm:space-x-reverse md:mt-0 md:flex-row md:space-x-3">
-          <div className="mt-4 p-4 bg-white shadow-md rounded-lg">
+        <div className="mt-6 flex flex-col-reverse justify-stretch space-y-4 space-y-reverse py-10 sm:flex-row-reverse sm:justify-end sm:space-x-3 sm:space-y-0 sm:space-x-reverse md:mt-0 md:flex-row md:space-x-3">
+          <div className="mt-4 rounded-lg bg-white p-4 shadow-md">
             <p className="text-lg font-medium text-zinc-950">
-              Your total balance{" "}
+              Your total balance
             </p>
-            <div className="p-4 my-2 bg-zinc-50 rounded-lg flex justify-between items-center">
-              <p className="text-amber-500 text-sm">
-                <span className="text-black font-medium">24k</span> Gold
+            <div className="my-2 flex items-center justify-between rounded-lg bg-zinc-50 p-4">
+              <p className="text-sm text-amber-500">
+                <span className="font-medium text-black">24k</span> Gold
               </p>
               <p className="text-lg font-bold">৳800</p>
             </div>
-            <div className="p-4 my-2 bg-zinc-50 rounded-lg flex justify-between items-center">
-              <p className="text-amber-500 text-sm">
-                <span className="text-black font-medium">18k</span> Gold
+            <div className="my-2 flex items-center justify-between rounded-lg bg-zinc-50 p-4">
+              <p className="text-sm text-amber-500">
+                <span className="font-medium text-black">18k</span> Gold
               </p>
               <p className="text-lg font-bold">৳600</p>
             </div>
-            <div className="p-4 my-2 bg-zinc-50 rounded-lg flex justify-between items-center">
-              <p className="text-amber-500 text-sm">
-                <span className="text-black font-medium">12k</span> Gold
+            <div className="my-2 flex items-center justify-between rounded-lg bg-zinc-50 p-4">
+              <p className="text-sm text-amber-500">
+                <span className="font-medium text-black">12k</span> Gold
               </p>
               <p className="text-lg font-bold">৳400</p>
             </div>
@@ -57,20 +57,20 @@ const Dashboard = () => {
 
       {/* Stock Info */}
       <section className="p-4">
-        <div className="flex justify-between items-center mb-4">
+        <div className="mb-4 flex items-center justify-between">
           <h2 className="text-lg font-medium text-zinc-950">Offers</h2>
           <button className="text-blue-400">See all</button>
         </div>
 
         {/* Stock Cards */}
         <div className="grid grid-cols-2 gap-4">
-          <div className="p-4 bg-white rounded-lg shadow-md">
-            <p className="text-yellow-500 text-md font-bold">22k 10gm Gold</p>
+          <div className="rounded-lg bg-white p-4 shadow-md">
+            <p className="text-md font-bold text-yellow-500">22k 10gm Gold</p>
             <p className="text-lg font-bold">৳7000</p>
             <p className="text-green-500">(-0.72%)</p>
           </div>
-          <div className="p-4 bg-white rounded-lg shadow-md">
-            <p className="text-yellow-500 text-md font-bold">
+          <div className="rounded-lg bg-white p-4 shadow-md">
+            <p className="text-md font-bold text-yellow-500">
               Traditional 10gm Gold
             </p>
             <p className="text-lg font-bold">৳5000</p>
@@ -103,11 +103,11 @@ const Dashboard = () => {
           ].map((item, index) => (
             <div
               key={index}
-              className="p-4 my-5 bg-white shadow  rounded flex justify-between items-center"
+              className="my-5 flex items-center justify-between rounded bg-white p-4 shadow"
             >
-              <p className="text-yellow-500 text-sm">{item.product}</p>
+              <p className="text-sm text-yellow-500">{item.product}</p>
               <p className="text-sm">{item.price}</p>
-              <p className="text-green-500 text-sm">{item.value}</p>
+              <p className="text-sm text-green-500">{item.value}</p>
               <button className="text-blue-400">
                 <Link href={"/dashboard/buy"}>Buy</Link> | Sell | Gift
               </button>
@@ -123,11 +123,11 @@ const Dashboard = () => {
           ].map((item, index) => (
             <div
               key={index}
-              className="p-4 bg-white shadow my-5 rounded flex justify-between items-center"
+              className="my-5 flex items-center justify-between rounded bg-white p-4 shadow"
             >
-              <p className="text-yellow-500 text-sm">{item.product}</p>
+              <p className="text-sm text-yellow-500">{item.product}</p>
               <p className="text-sm">{item.price}</p>
-              <p className="text-green-500 text-sm">{item.value}</p>
+              <p className="text-sm text-green-500">{item.value}</p>
               <button className="text-blue-400">Buy | Sell | Gift</button>
             </div>
           ))}

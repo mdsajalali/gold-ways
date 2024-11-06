@@ -2,17 +2,17 @@ import Link from "next/link";
 
 export default function HeaderNavigation() {
   return (
-    <nav className="flex-no-wrap fixed top-0 z-[999]  w-full items-center justify-between bg-white py-2 shadow-md shadow-black/5 dark:bg-neutral-600 dark:shadow-black/10 lg:flex-wrap lg:justify-start lg:py-4">
-      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+    <nav className="flex-no-wrap fixed top-0 z-[999] w-full items-center justify-between bg-white py-2 shadow-md shadow-black/5 dark:bg-neutral-600 dark:shadow-black/10 lg:flex-wrap lg:justify-start lg:py-4">
+      <div className="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between p-4">
         <div
-          className=" w-full items-center justify-between  md:w-auto"
+          className="w-full items-center justify-between md:w-auto"
           id="navbar-default"
         >
-          <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+          <ul className="mt-4 flex flex-col rounded-lg border border-gray-100 bg-gray-50 p-4 font-medium dark:border-gray-700 dark:bg-gray-800 md:mt-0 md:flex-row md:space-x-8 md:border-0 md:bg-white md:p-0 md:dark:bg-gray-900 rtl:space-x-reverse">
             <li>
               <Link
                 href="/"
-                className="block py-2 px-3 text-white bg-amber-700 rounded md:bg-transparent md:text-amber-700 md:p-0 dark:text-white md:dark:text-amber-500"
+                className="block rounded bg-amber-700 px-3 py-2 text-white dark:text-white md:bg-transparent md:p-0 md:text-amber-700 md:dark:text-amber-500"
                 aria-current="page"
               >
                 Home
@@ -21,7 +21,7 @@ export default function HeaderNavigation() {
             <li>
               <Link
                 href="/explore"
-                className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-amber-700 md:p-0 dark:text-white md:dark:hover:text-amber-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                className="block rounded px-3 py-2 text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-amber-700 md:dark:hover:bg-transparent md:dark:hover:text-amber-500"
               >
                 Explore
               </Link>
@@ -29,7 +29,7 @@ export default function HeaderNavigation() {
             <li>
               <Link
                 href="/offers"
-                className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-amber-700 md:p-0 dark:text-white md:dark:hover:text-amber-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                className="block rounded px-3 py-2 text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-amber-700 md:dark:hover:bg-transparent md:dark:hover:text-amber-500"
               >
                 Offers
               </Link>
@@ -37,7 +37,7 @@ export default function HeaderNavigation() {
             <li>
               <Link
                 href="/services"
-                className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-amber-700 md:p-0 dark:text-white md:dark:hover:text-amber-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                className="block rounded px-3 py-2 text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-amber-700 md:dark:hover:bg-transparent md:dark:hover:text-amber-500"
               >
                 Services
               </Link>
@@ -45,7 +45,7 @@ export default function HeaderNavigation() {
             <li>
               <Link
                 href="account"
-                className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-amber-700 md:p-0 dark:text-white md:dark:hover:text-amber-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                className="block rounded px-3 py-2 text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-amber-700 md:dark:hover:bg-transparent md:dark:hover:text-amber-500"
               >
                 Account
               </Link>

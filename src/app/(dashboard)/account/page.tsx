@@ -75,7 +75,7 @@ function classNames(...classes: any) {
 export default function page() {
   return (
     <>
-      <dl className="flex container mx-auto flex-wrap">
+      <dl className="container mx-auto flex flex-wrap">
         {/* Name and Phone */}
         <div className="flex-auto pl-6 pt-6">
           <dt className="text-sm font-semibold leading-6 text-gray-900">
@@ -129,7 +129,7 @@ export default function page() {
         <nav className="flex-none px-4 sm:px-6 lg:px-0">
           <ul
             role="list"
-            className="flex gap-x-3 gap-y-1 whitespace-nowrap flex-col"
+            className="flex flex-col gap-x-3 gap-y-1 whitespace-nowrap"
           >
             {secondaryNavigation.map((item) => (
               <li key={item.name}>
@@ -139,7 +139,7 @@ export default function page() {
                     item.current
                       ? "bg-gray-50 text-amber-600"
                       : "text-gray-700 hover:bg-gray-50 hover:text-amber-600",
-                    "group flex gap-x-3 rounded-md py-2 pl-2 pr-3 text-sm font-semibold leading-6"
+                    "group flex gap-x-3 rounded-md py-2 pl-2 pr-3 text-sm font-semibold leading-6",
                   )}
                 >
                   <item.icon
@@ -148,7 +148,7 @@ export default function page() {
                       item.current
                         ? "text-amber-600"
                         : "text-gray-400 group-hover:text-amber-600",
-                      "h-6 w-6 shrink-0"
+                      "h-6 w-6 shrink-0",
                     )}
                   />
                   {item.name}
