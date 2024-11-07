@@ -22,7 +22,7 @@ const Gift = () => {
 
   const handleGift = () => {
     if (!userId || !otp) {
-      alert("Please provide both User ID and OTP.");
+      console.log("Please provide both User ID and OTP.");
       return;
     }
 
@@ -121,10 +121,11 @@ const Gift = () => {
                 />
               </div>
             </div>
-
-            <Button className="mt-4 w-full" onClick={handleGift}>
-              Gift
-            </Button>
+            <Link href="/dashboard/checkout">
+              <Button className="mt-4 w-full" onClick={handleGift}>
+                Gift
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
