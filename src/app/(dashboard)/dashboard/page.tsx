@@ -97,19 +97,43 @@ const Dashboard = () => {
           ].map((item, index) => (
             <div
               key={index}
-              className="my-5 flex items-center justify-between gap-1 rounded bg-white px-2 py-2 shadow md:p-4"
+              className="my-5 flex flex-col items-center justify-center gap-4 rounded bg-white px-4 py-3 shadow-md md:flex-row md:items-start md:justify-between md:p-6"
             >
-              <p className="text-sm text-yellow-500">{item.product}</p>
-              <p className="text-sm">{item.price}</p>
-              <p className="text-sm text-green-500">{item.value}</p>
-              <button className="text-blue-400">
-                <Link href={"/dashboard/buy"}>Buy | </Link>
-                <Link href={"/dashboard/sell"}>Sell | </Link>
-                <Link href={"/dashboard/gift"}>Gift | </Link>
-                <Link href={"/dashboard/exchange"}>Exchange</Link>
-              </button>
+              <p className="w-full text-center text-sm font-semibold text-yellow-500 sm:w-1/3 sm:text-left">
+                {item.product}
+              </p>
+              <p className="w-full text-center text-sm sm:w-1/3 sm:text-left">
+                {item.price}
+              </p>
+              <p className="w-full text-center text-sm text-green-500 sm:w-1/3 sm:text-left">
+                {item.value}
+              </p>
+
+              <div className="mt-3 w-full sm:mt-0 sm:flex sm:w-auto sm:justify-end">
+                <button className="mx-auto flex w-full items-center justify-center space-x-3 text-sm text-blue-400 sm:space-x-4">
+                  <Link href={"/dashboard/buy"} className="hover:underline">
+                    Buy
+                  </Link>
+                  <span className="text-gray-400">|</span>
+                  <Link href={"/dashboard/sell"} className="hover:underline">
+                    Sell
+                  </Link>
+                  <span className="text-gray-400">|</span>
+                  <Link href={"/dashboard/gift"} className="hover:underline">
+                    Gift
+                  </Link>
+                  <span className="text-gray-400">|</span>
+                  <Link
+                    href={"/dashboard/exchange"}
+                    className="hover:underline"
+                  >
+                    Exchange
+                  </Link>
+                </button>
+              </div>
             </div>
           ))}
+
           <br />
           <p className="text-sm">(NO HALLMARKED)</p>
           <hr />
@@ -120,14 +144,29 @@ const Dashboard = () => {
           ].map((item, index) => (
             <div
               key={index}
-              className="my-5 flex items-center justify-between rounded bg-white p-2 shadow md:p-4"
+              className="my-5 flex flex-col items-center justify-center gap-4 rounded bg-white p-3 shadow-md md:flex-row md:items-start md:justify-between md:p-4"
             >
-              <p className="text-sm text-yellow-500">{item.product}</p>
-              <p className="text-sm">{item.price}</p>
-              <p className="text-sm text-green-500">{item.value}</p>
-              <button className="text-blue-400">
-                Buy | Sell | Gift | Exchange
-              </button>
+              <p className="w-full text-center text-sm font-semibold text-yellow-500 sm:w-1/3 sm:text-left">
+                {item.product}
+              </p>
+              <p className="w-full text-center text-sm sm:w-1/3 sm:text-left">
+                {item.price}
+              </p>
+              <p className="w-full text-center text-sm text-green-500 sm:w-1/3 sm:text-left">
+                {item.value}
+              </p>
+
+              <div className="mt-3 w-full sm:mt-0 sm:flex sm:w-auto sm:justify-end">
+                <button className="flex w-full mx-auto sm:pb-0 pb-10 items-center justify-center space-x-3 text-sm text-blue-400 sm:space-x-4">
+                  <span className="hover:underline">Buy</span>
+                  <span className="text-gray-400">|</span>
+                  <span className="hover:underline">Sell</span>
+                  <span className="text-gray-400">|</span>
+                  <span className="hover:underline">Gift</span>
+                  <span className="text-gray-400">|</span>
+                  <span className="hover:underline">Exchange</span>
+                </button>
+              </div>
             </div>
           ))}
         </div>
