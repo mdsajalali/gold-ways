@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Checkbox } from "@/components/ui/checkbox";
+import Link from "next/link";
 
 const Checkout = () => {
   // State management for the payment method and inputs
@@ -27,7 +27,7 @@ const Checkout = () => {
   const handleSubmit = (e: any) => {
     e.preventDefault();
     if (!isTermsChecked) {
-      alert("You must agree to the terms and conditions.");
+      console.log("You must agree to the terms and conditions.");
       return;
     }
     // Proceed with the payment process (e.g., API call)
@@ -35,7 +35,7 @@ const Checkout = () => {
   };
 
   return (
-    <section className="container mx-auto p-4 sm:p-6 pb-20 md:p-8">
+    <section className="container mx-auto p-4 pb-20 sm:p-6 md:p-8">
       <div className="mb-6 flex items-center justify-between">
         <h1 className="text-2xl font-semibold text-gray-800">Checkout</h1>
       </div>
@@ -125,11 +125,14 @@ const Checkout = () => {
 
         {/* Terms and Conditions */}
         <div className="flex items-center space-x-2">
-          <Checkbox
+          <input
+            type="checkbox"
+            id="terms"
             checked={isTermsChecked}
             onChange={() => setIsTermsChecked(!isTermsChecked)}
+            className="mr-2"
           />
-          <label className="text-sm text-gray-600">
+          <label htmlFor="terms" className="text-sm text-gray-600">
             I agree to the{" "}
             <a href="/terms" className="text-blue-600">
               Terms and Conditions
@@ -138,18 +141,16 @@ const Checkout = () => {
         </div>
 
         {/* Checkout Buttons */}
-        <div className="flex justify-between gap-4">
-          <Button
-            className="w-full bg-green-600 hover:bg-green-500"
-            onClick={handleSubmit}
-          >
-            Buy Now
-          </Button>
-
-          <Button className="w-full bg-red-600 hover:bg-red-500">
-            Sell Now
-          </Button>
-        </div>
+        <Link href="/dashboard/success">
+          <div className="my-2 flex justify-between gap-4">
+            <Button
+              className="w-full bg-green-600 hover:bg-green-500"
+              onClick={handleSubmit}
+            >
+              Payment
+            </Button>
+          </div>
+        </Link>
       </div>
     </section>
   );
