@@ -9,6 +9,7 @@ import {
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
+import { BuyDropdown } from "@/components/core/BuyDropdown";
 
 const Buy = () => {
   return (
@@ -103,52 +104,19 @@ const Buy = () => {
             <p className="mb-1 font-medium text-gray-500">
               Buy 2434k, 999 pursuit Digital GOLD
             </p>
-            <div className="flex gap-x-4">
-              <div className="relative flex w-56 items-center justify-center rounded-xl bg-gray-50 px-4 py-3 font-medium text-gray-700">
-                <input
-                  className="peer hidden"
-                  type="radio"
-                  name="radio"
-                  id="radio1"
-                  checked
-                  readOnly
-                />
-                <label
-                  className="absolute top-0 h-full w-full cursor-pointer rounded-xl border peer-checked:border-yellow-400 peer-checked:bg-yellow-200"
-                  htmlFor="radio1"
-                >
-                  {" "}
-                </label>
-                <div className="absolute left-4 h-5 w-5 rounded-full border-2 border-gray-300 bg-gray-200 ring-yellow-400 ring-offset-2 peer-checked:border-transparent peer-checked:bg-yellow-400 peer-checked:ring-2"></div>
-                <span className="pointer-events-none z-10">BDT</span>
-              </div>
-              <div className="relative flex w-56 items-center justify-center rounded-xl bg-gray-50 px-4 py-3 font-medium text-gray-700">
-                <input
-                  className="peer hidden"
-                  type="radio"
-                  name="radio"
-                  id="radio3"
-                  checked
-                  readOnly
-                />
-                <label
-                  className="absolute top-0 h-full w-full cursor-pointer rounded-xl border peer-checked:border-yellow-400 peer-checked:bg-yellow-200"
-                  htmlFor="radio3"
-                >
-                  {" "}
-                </label>
-                <div className="absolute left-4 h-5 w-5 rounded-full border-2 border-gray-300 bg-gray-200 ring-yellow-400 ring-offset-2 peer-checked:border-transparent peer-checked:bg-yellow-400 peer-checked:ring-2"></div>
-                <span className="pointer-events-none z-10">In Grams</span>
-              </div>
-            </div>
+
             <div className="flex flex-wrap items-center justify-between py-2">
+              <div className="flex gap-x-4">
+                <BuyDropdown />
+              </div>
               <div>
                 <Input type="text" placeholder="Price" />
-              </div>{" "}
+              </div>
               <div>
                 <Label>= 0.11123g</Label>
               </div>
             </div>
+
             <Button className="mt-4 w-full">Buy</Button>
           </div>
         </div>

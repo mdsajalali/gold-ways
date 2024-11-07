@@ -47,7 +47,7 @@ export default function Page() {
               )}
             </button>
           </div>
-          <Link href={"/registration"}>
+          <Link href={"/dashboard"}>
             <button
               type="submit"
               className="mt-4 inline-flex w-full cursor-pointer items-center justify-center rounded-md border border-transparent bg-black px-4 py-3 text-base font-medium leading-6 text-amber-100 duration-300 hover:bg-yellow-500 hover:text-black focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2"

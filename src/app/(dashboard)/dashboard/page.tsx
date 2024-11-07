@@ -43,12 +43,6 @@ const Dashboard = () => {
               </p>
               <p className="text-lg font-bold">৳600</p>
             </div>
-            <div className="my-2 flex items-center justify-between rounded-lg bg-zinc-50 p-4">
-              <p className="text-sm text-amber-500">
-                <span className="font-medium text-black">12k</span> Gold
-              </p>
-              <p className="text-lg font-bold">৳400</p>
-            </div>
           </div>
         </div>
       </div>
