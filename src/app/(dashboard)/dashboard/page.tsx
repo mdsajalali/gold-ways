@@ -97,13 +97,16 @@ const Dashboard = () => {
           ].map((item, index) => (
             <div
               key={index}
-              className="my-5 flex items-center justify-between rounded bg-white p-4 shadow"
+              className="my-5 flex items-center justify-between gap-1 rounded bg-white px-2 py-2 shadow md:p-4"
             >
               <p className="text-sm text-yellow-500">{item.product}</p>
               <p className="text-sm">{item.price}</p>
               <p className="text-sm text-green-500">{item.value}</p>
               <button className="text-blue-400">
-                <Link href={"/dashboard/buy"}>Buy</Link> | Sell | Gift
+                <Link href={"/dashboard/buy"}>Buy | </Link>
+                <Link href={"/dashboard/sell"}>Sell | </Link>
+                <Link href={"/dashboard/gift"}>Gift | </Link>
+                <Link href={"/dashboard/exchange"}>Exchange</Link>
               </button>
             </div>
           ))}
@@ -117,12 +120,14 @@ const Dashboard = () => {
           ].map((item, index) => (
             <div
               key={index}
-              className="my-5 flex items-center justify-between rounded bg-white p-4 shadow"
+              className="my-5 flex items-center justify-between rounded bg-white p-2 shadow md:p-4"
             >
               <p className="text-sm text-yellow-500">{item.product}</p>
               <p className="text-sm">{item.price}</p>
               <p className="text-sm text-green-500">{item.value}</p>
-              <button className="text-blue-400">Buy | Sell | Gift</button>
+              <button className="text-blue-400">
+                Buy | Sell | Gift | Exchange
+              </button>
             </div>
           ))}
         </div>

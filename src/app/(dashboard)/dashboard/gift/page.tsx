@@ -6,7 +6,7 @@ import { Label } from "@/components/ui/label";
 import { BuyDropdown } from "@/components/core/BuyDropdown";
 import { RegularPriceModal } from "@/components/core/RegularPriceModal";
 
-const Buy = () => {
+const Gift = () => {
   return (
     <>
       {/* Stock Info */}
@@ -53,7 +53,7 @@ const Buy = () => {
 
             <RegularPriceModal />
 
-            <Button className="mt-4 w-full">Buy</Button>
+            <Button className="mt-4 w-full">Gift</Button>
           </div>
         </div>
       </section>
@@ -61,4 +61,4 @@ const Buy = () => {
   );
 };
 
-export default Buy;
+export default Gift;

@@ -17,7 +17,7 @@ export function RegularPriceModal() {
         </DialogTrigger>
         <DialogContent className="max-w-xs p-4 sm:max-w-[425px] lg:max-w-[600px]">
           {/* Header card */}
-          <div className="rounded-lg bg-white ">
+          <div className="rounded-lg bg-white">
             <div className="flex flex-row justify-between pb-4">
               <div className="flex items-center gap-x-2">
                 <ClockIcon
@@ -33,8 +33,7 @@ export function RegularPriceModal() {
             <div className="flex flex-col items-center justify-between sm:flex-row sm:items-start sm:gap-x-4">
               <div className="flex flex-col justify-start">
                 <p className="mb-2 text-2xl font-bold text-gray-700 sm:text-4xl">
-                  5,22.20
-                  <span className="text-sm"> /g </span>
+                  Regular Price ৳5,22.20
                 </p>
                 <div className="flex items-center text-sm text-green-500">
                   <span className="mr-2 text-gray-400">
