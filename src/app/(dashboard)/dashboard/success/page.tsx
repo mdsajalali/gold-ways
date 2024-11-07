@@ -5,6 +5,8 @@ import { Button } from "@/components/ui/button";
 import { saveAs } from "file-saver";
 import { jsPDF } from "jspdf";
 import Link from "next/link";
+import { ArrowLeftCircleIcon } from "lucide-react";
+import { BellAlertIcon } from "@heroicons/react/20/solid";
 
 const Success = () => {
   const [loading, setLoading] = useState(false);
@@ -45,6 +47,27 @@ const Success = () => {
 
   return (
     <section className="container mx-auto p-6">
+      <div className="mb-4 flex items-center justify-between">
+        <Link href={"/dashboard"}>
+          <button
+            type="button"
+            className="inline-flex items-center gap-x-1.5 rounded-md bg-yellow-600 px-2.5 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-yellow-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-600"
+          >
+            <ArrowLeftCircleIcon
+              aria-hidden="true"
+              className="-ml-0.5 h-5 w-5"
+            />
+            Back
+          </button>
+        </Link>
+
+        <button
+          type="button"
+          className="inline-flex items-center gap-x-1.5 rounded-md bg-yellow-600 px-2.5 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-yellow-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-600"
+        >
+          <BellAlertIcon aria-hidden="true" className="-ml-0.5 h-5 w-5" />
+        </button>
+      </div>
       <div className="rounded-lg bg-green-100 p-6 text-center shadow-lg">
         <h2 className="mb-4 text-2xl font-semibold text-green-800">
           Transaction Successful!
@@ -74,15 +97,6 @@ const Success = () => {
           >
             {loading ? "Generating..." : "Download Invoice (Text File)"}
           </Button>
-        </div>
-
-        {/* Navigation buttons */}
-        <div className="flex justify-center mt-4 gap-6">
-          <Link href="/dashboard">
-            <Button className="rounded-lg bg-blue-600 px-6 py-2 text-white hover:bg-blue-500">
-              Go to Home
-            </Button>
-          </Link>
         </div>
       </div>
     </section>

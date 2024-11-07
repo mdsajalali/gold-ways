@@ -43,7 +43,7 @@ const Exchange = () => {
               <div className="flex w-full gap-x-4 sm:w-auto">
                 <BuyDropdown />
               </div>
-              <div className="w-full flex items-center gap-2 sm:w-auto">
+              <div className="flex w-full items-center gap-2 sm:w-auto">
                 <Input type="text" placeholder="input" />
                 <Input type="text" placeholder="value" />
               </div>
@@ -53,8 +53,9 @@ const Exchange = () => {
             </div>
 
             <RegularPriceModal />
-
-            <Button className="mt-4 w-full">Exchange</Button>
+            <Link href="/dashboard/checkout">
+              <Button className="mt-4 w-full">Exchange</Button>
+            </Link>
           </div>
         </div>
       </section>

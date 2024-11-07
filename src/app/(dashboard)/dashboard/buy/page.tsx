@@ -52,8 +52,9 @@ const Buy = () => {
             </div>
 
             <RegularPriceModal />
-
-            <Button className="mt-4 w-full">Buy</Button>
+            <Link href="/dashboard/checkout">
+              <Button className="mt-4 w-full">Buy</Button>
+            </Link>
           </div>
         </div>
       </section>

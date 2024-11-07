@@ -5,6 +5,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import Link from "next/link";
+import { ArrowLeftCircleIcon } from "lucide-react";
+import { BellAlertIcon } from "@heroicons/react/20/solid";
 
 const Checkout = () => {
   // State management for the payment method and inputs
@@ -24,20 +26,32 @@ const Checkout = () => {
     setPaymentMethod(e.target.value);
   };
 
-  const handleSubmit = (e: any) => {
-    e.preventDefault();
-    if (!isTermsChecked) {
-      console.log("You must agree to the terms and conditions.");
-      return;
-    }
-    // Proceed with the payment process (e.g., API call)
-    console.log("Checkout submitted!");
-  };
-
   return (
     <section className="container mx-auto p-4 pb-20 sm:p-6 md:p-8">
       <div className="mb-6 flex items-center justify-between">
         <h1 className="text-2xl font-semibold text-gray-800">Checkout</h1>
+      </div>
+
+      <div className="mb-4 flex items-center justify-between">
+        <Link href={"/dashboard"}>
+          <button
+            type="button"
+            className="inline-flex items-center gap-x-1.5 rounded-md bg-yellow-600 px-2.5 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-yellow-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-600"
+          >
+            <ArrowLeftCircleIcon
+              aria-hidden="true"
+              className="-ml-0.5 h-5 w-5"
+            />
+            Back
+          </button>
+        </Link>
+
+        <button
+          type="button"
+          className="inline-flex items-center gap-x-1.5 rounded-md bg-yellow-600 px-2.5 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-yellow-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-600"
+        >
+          <BellAlertIcon aria-hidden="true" className="-ml-0.5 h-5 w-5" />
+        </button>
       </div>
 
       <div className="space-y-6 rounded-lg bg-white p-6 shadow-lg">
@@ -143,10 +157,7 @@ const Checkout = () => {
         {/* Checkout Buttons */}
         <Link href="/dashboard/success">
           <div className="my-2 flex justify-between gap-4">
-            <Button
-              className="w-full bg-green-600 hover:bg-green-500"
-              onClick={handleSubmit}
-            >
+            <Button className="w-full bg-green-600 hover:bg-green-500">
               Payment
             </Button>
           </div>
