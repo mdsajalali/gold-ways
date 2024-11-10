@@ -17,43 +17,68 @@ import {
 import TransactionsHistory from "@/components/core/TransactionsHistory";
 
 const secondaryNavigation = [
-  { name: "Account details", href: "/account-details", icon: CubeIcon, current: true },
+  {
+    name: "Account details",
+    href: "/account-details",
+    icon: CubeIcon,
+    current: true,
+  },
   {
     name: "Loan Management",
-    href: "#loan-management",
+    href: "/loan-management",
     icon: UserGroupIcon,
     current: false,
   },
   {
     name: "Rental Management",
-    href: "#rental-management",
+    href: "/rental-management",
     icon: UserGroupIcon,
     current: false,
   },
   {
     name: "Payment Scheduling",
-    href: "#payment-scheduling",
+    href: "/payment-scheduling",
     icon: CalendarDaysIcon,
     current: false,
   },
-  { name: "Change PIN", href: "#", icon: FingerPrintIcon, current: false },
-  { name: "Notification", href: "#", icon: BellIcon, current: false },
-  { name: "Resubmit KYC", href: "#", icon: IdentificationIcon, current: false },
   {
-    name: "Authorized Merchant",
-    href: "#",
+    name: "Change PIN",
+    href: "/change-pin",
+    icon: FingerPrintIcon,
+    current: false,
+  },
+  {
+    name: "Notification",
+    href: "/notification",
+    icon: BellIcon,
+    current: false,
+  },
+  {
+    name: "Resubmit KYC",
+    href: "/resubmit-kyc",
     icon: IdentificationIcon,
     current: false,
   },
-  { name: "Language", href: "#", icon: GlobeAltIcon, current: false },
+  {
+    name: "Authorized Merchant",
+    href: "/authorized-merchant",
+    icon: IdentificationIcon,
+    current: false,
+  },
+  { name: "Language", href: "/language", icon: GlobeAltIcon, current: false },
   {
     name: "Terms and condition",
-    href: "#",
+    href: "/terms-condition",
     icon: DocumentTextIcon,
     current: false,
   },
-  { name: "Help", href: "#", icon: QuestionMarkCircleIcon, current: false },
-  { name: "Logout", href: "#", icon: ArrowLeftOnRectangleIcon, current: false },
+  { name: "Help", href: "/help", icon: QuestionMarkCircleIcon, current: false },
+  {
+    name: "Logout",
+    href: "/logout",
+    icon: ArrowLeftOnRectangleIcon,
+    current: false,
+  },
 ];
 
 function classNames(...classes: any) {
