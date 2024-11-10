@@ -1,18 +1,7 @@
-import Link from "next/link";
-import {
-  Bars3Icon,
-  CalendarDaysIcon,
-  EnvelopeIcon,
-  PhoneIcon,
-  EllipsisVerticalIcon,
-  FaceFrownIcon,
-  FaceSmileIcon,
-  FireIcon,
-  HandThumbUpIcon,
-  HeartIcon,
-  PaperClipIcon,
-  XMarkIcon as XMarkIconMini,
-} from "@heroicons/react/20/solid";
+"use client";
+
+import { CalendarDaysIcon } from "@heroicons/react/20/solid";
+import { useState } from "react";
 import {
   CubeIcon,
   UserGroupIcon,
@@ -25,8 +14,6 @@ import {
   ArrowLeftOnRectangleIcon,
 } from "@heroicons/react/24/outline";
 
-import { CheckCircleIcon } from "@heroicons/react/24/solid";
-import { MobileIcon } from "@radix-ui/react-icons";
 import TransactionsHistory from "@/components/core/TransactionsHistory";
 
 const secondaryNavigation = [
@@ -74,6 +61,10 @@ function classNames(...classes: any) {
 }
 
 export default function page() {
+  const [isSidebarOpen, setSidebarOpen] = useState(false);
+
+  // Function to toggle sidebar visibility
+  const toggleSidebar = () => setSidebarOpen(!isSidebarOpen);
   return (
     <>
       <dl className="container mx-auto flex flex-wrap">
@@ -129,7 +120,8 @@ export default function page() {
       {/* Transactions History */}
       <TransactionsHistory />
 
-      <aside className="flex overflow-x-auto border-b border-gray-900/5 py-4 lg:block lg:w-64 lg:flex-none lg:border-0 lg:py-20">
+      {/* TODO: The previous code */}
+      {/* <aside className="flex overflow-x-auto border-b border-gray-900/5 py-4 lg:block lg:w-64 lg:flex-none lg:border-0 lg:py-20">
         <nav className="flex-none px-4 sm:px-6 lg:px-0">
           <ul
             role="list"
@@ -161,7 +153,93 @@ export default function page() {
             ))}
           </ul>
         </nav>
-      </aside>
+      </aside> */}
+
+      <div className="relative py-20">
+        {/* Mobile Button to toggle sidebar */}
+        <button
+          onClick={toggleSidebar}
+          className="p-4 text-gray-600 hover:text-amber-600 lg:hidden"
+        >
+          <span className="sr-only">Open Sidebar</span>
+          {/* Button Icon (hamburger menu) */}
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            className="h-6 w-6"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+        </button>
+
+        {/* Sidebar */}
+        <aside
+          className={`fixed inset-0 z-50 transform bg-white   transition-all duration-300 ease-in-out ${
+            isSidebarOpen ? "translate-x-0" : "-translate-x-full"
+          } w-[75%] lg:relative lg:block lg:w-64 lg:translate-x-0 lg:border-0 lg:py-20`}
+        >
+          {/* Close Button on Mobile */}
+          <button
+            onClick={toggleSidebar}
+            className="absolute right-4 top-4 p-2 text-gray-600 hover:text-amber-600 lg:hidden"
+          >
+            <span className="sr-only">Close Sidebar</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              className="h-6 w-6"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </button>
+
+          <nav className="flex-none px-4 sm:px-6 lg:px-0">
+            <ul
+              role="list"
+              className="flex flex-col gap-x-3 gap-y-1 whitespace-nowrap"
+            >
+              {secondaryNavigation.map((item) => (
+                <li key={item.name}>
+                  <a
+                    href={item.href}
+                    className={classNames(
+                      item.current
+                        ? "bg-gray-50 text-amber-600"
+                        : "text-gray-700 hover:bg-gray-50 hover:text-amber-600",
+                      "group flex gap-x-3 rounded-md py-2 pl-2 pr-3 text-sm font-semibold leading-6",
+                    )}
+                  >
+                    <item.icon
+                      aria-hidden="true"
+                      className={classNames(
+                        item.current
+                          ? "text-amber-600"
+                          : "text-gray-400 group-hover:text-amber-600",
+                        "h-6 w-6 shrink-0",
+                      )}
+                    />
+                    {item.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        </aside>
+      </div>
     </>
   );
 }
