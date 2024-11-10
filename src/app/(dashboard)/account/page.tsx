@@ -17,7 +17,7 @@ import {
 import TransactionsHistory from "@/components/core/TransactionsHistory";
 
 const secondaryNavigation = [
-  { name: "Account detail", href: "#", icon: CubeIcon, current: true },
+  { name: "Account details", href: "/account-details", icon: CubeIcon, current: true },
   {
     name: "Loan Management",
     href: "#loan-management",
@@ -179,7 +179,7 @@ export default function Page() {
           {/* Close Button on Mobile */}
           <button
             onClick={toggleSidebar}
-            className="absolute right-4 top-4 p-2 text-gray-600 hover:text-amber-600 md:hidden"
+            className="absolute right-2 top-2 text-gray-600 hover:text-amber-600 md:hidden"
           >
             <span className="sr-only">Close Sidebar</span>
             <svg
@@ -198,7 +198,7 @@ export default function Page() {
             </svg>
           </button>
 
-          <nav className="flex-none px-4 sm:px-6 lg:px-0">
+          <nav className="flex-none pl-4 pr-8 sm:px-6 lg:px-0">
             <ul
               role="list"
               className="flex flex-col gap-x-3 gap-y-1 whitespace-nowrap"
