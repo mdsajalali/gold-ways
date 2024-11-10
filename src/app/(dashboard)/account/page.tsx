@@ -27,6 +27,7 @@ import {
 
 import { CheckCircleIcon } from "@heroicons/react/24/solid";
 import { MobileIcon } from "@radix-ui/react-icons";
+import TransactionsHistory from "@/components/core/TransactionsHistory";
 
 const secondaryNavigation = [
   { name: "Account detail", href: "#", icon: CubeIcon, current: true },
@@ -124,6 +125,9 @@ export default function page() {
           </dd>
         </div>
       </dl>
+
+      {/* Transactions History */}
+      <TransactionsHistory />
 
       <aside className="flex overflow-x-auto border-b border-gray-900/5 py-4 lg:block lg:w-64 lg:flex-none lg:border-0 lg:py-20">
         <nav className="flex-none px-4 sm:px-6 lg:px-0">
