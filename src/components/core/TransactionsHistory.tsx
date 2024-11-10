@@ -34,6 +34,116 @@ const transactions = [
     status: "Completed",
     account: "Credit Card",
   },
+  {
+    id: 1,
+    name: "John Doe",
+    image: "https://i.pravatar.cc/150?img=7",
+    invoiceId: "INV-12345",
+    date: "2024-10-10",
+    description: "Payment to John",
+    amount: -50,
+    status: "Completed",
+    account: "Credit Card",
+  },
+  {
+    id: 2,
+    name: "Alice Smith",
+    image: "https://i.pravatar.cc/150?img=8",
+    invoiceId: "INV-12346",
+    date: "2024-10-09",
+    description: "Payment from Alice",
+    amount: 150,
+    status: "Pending",
+    account: "Credit Card",
+  },
+  {
+    id: 3,
+    name: "Sarah Johnson",
+    image: "https://i.pravatar.cc/150?img=9",
+    invoiceId: "INV-12347",
+    date: "2024-10-08",
+    description: "Payment to Sarah",
+    amount: -30,
+    status: "Completed",
+    account: "Credit Card",
+  },
+  {
+    id: 1,
+    name: "John Doe",
+    image: "https://i.pravatar.cc/150?img=7",
+    invoiceId: "INV-12345",
+    date: "2024-10-10",
+    description: "Payment to John",
+    amount: -50,
+    status: "Completed",
+    account: "Credit Card",
+  },
+  {
+    id: 2,
+    name: "Alice Smith",
+    image: "https://i.pravatar.cc/150?img=8",
+    invoiceId: "INV-12346",
+    date: "2024-10-09",
+    description: "Payment from Alice",
+    amount: 150,
+    status: "Pending",
+    account: "Credit Card",
+  },
+  {
+    id: 3,
+    name: "Sarah Johnson",
+    image: "https://i.pravatar.cc/150?img=9",
+    invoiceId: "INV-12347",
+    date: "2024-10-08",
+    description: "Payment to Sarah",
+    amount: -30,
+    status: "Completed",
+    account: "Credit Card",
+  },
+  {
+    id: 1,
+    name: "John Doe",
+    image: "https://i.pravatar.cc/150?img=7",
+    invoiceId: "INV-12345",
+    date: "2024-10-10",
+    description: "Payment to John",
+    amount: -50,
+    status: "Completed",
+    account: "Credit Card",
+  },
+  {
+    id: 2,
+    name: "Alice Smith",
+    image: "https://i.pravatar.cc/150?img=8",
+    invoiceId: "INV-12346",
+    date: "2024-10-09",
+    description: "Payment from Alice",
+    amount: 150,
+    status: "Pending",
+    account: "Credit Card",
+  },
+  {
+    id: 3,
+    name: "Sarah Johnson",
+    image: "https://i.pravatar.cc/150?img=9",
+    invoiceId: "INV-12347",
+    date: "2024-10-08",
+    description: "Payment to Sarah",
+    amount: -30,
+    status: "Completed",
+    account: "Credit Card",
+  },
+];
+
+const transactionColumns = [
+  { label: "Name", key: "name" },
+  { label: "Date", key: "date" },
+  { label: "Transaction", key: "description" },
+  { label: "Invoice ID", key: "invoiceId" },
+  { label: "Amount", key: "amount" },
+  { label: "Account", key: "account" },
+  { label: "Status", key: "status" },
+  { label: "Action", key: "action" },
 ];
 
 const TransactionsHistory = () => {
@@ -51,30 +161,14 @@ const TransactionsHistory = () => {
         <table className="min-w-full table-auto">
           <thead className="bg-gray-100">
             <tr>
-              <th className="px-6 py-3 text-left text-sm font-medium text-gray-600">
-                Name
-              </th>
-              <th className="px-6 py-3 text-left text-sm font-medium text-gray-600">
-                Date
-              </th>
-              <th className="px-6 py-3 text-left text-sm font-medium text-gray-600">
-                Transaction
-              </th>
-              <th className="px-6 py-3 text-left text-sm font-medium text-gray-600">
-                Invoice ID
-              </th>
-              <th className="px-6 py-3 text-left text-sm font-medium text-gray-600">
-                Amount
-              </th>
-              <th className="px-6 py-3 text-left text-sm font-medium text-gray-600">
-                Status
-              </th>
-              <th className="px-6 py-3 text-left text-sm font-medium text-gray-600">
-                Action
-              </th>
-              <th className="px-6 py-3 text-left text-sm font-medium text-gray-600">
-                Account
-              </th>
+              {transactionColumns.map((column) => (
+                <th
+                  key={column.key}
+                  className="px-6 py-3 text-left text-sm font-medium text-gray-600"
+                >
+                  {column.label}
+                </th>
+              ))}
             </tr>
           </thead>
           <tbody>
@@ -102,7 +196,7 @@ const TransactionsHistory = () => {
 
                 {/* Date */}
                 <td className="whitespace-nowrap px-6 py-4 text-sm text-gray-800">
-                  {format(new Date(transaction.date), "MMMM dd, yyyy")}
+                  {format(new Date(transaction.date), "MMM dd, yyyy")}
                 </td>
 
                 {/* Transaction Description */}
