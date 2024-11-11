@@ -4,10 +4,6 @@ import { ArrowLeftCircleIcon, BellAlertIcon } from "@heroicons/react/20/solid";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { BuyDropdown } from "@/components/core/BuyDropdown";
-import { RegularPriceModal } from "@/components/core/RegularPriceModal";
-import Image from "next/image";
-import { Separator } from "@/components/ui/separator";
-import { ClockIcon } from "lucide-react";
 import LivePrice from "@/components/core/LivePrice";
 
 const Buy = () => {

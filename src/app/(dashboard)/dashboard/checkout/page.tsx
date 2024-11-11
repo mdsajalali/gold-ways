@@ -58,35 +58,52 @@ const Checkout = () => {
         {/* Item Info */}
         <div className="space-y-2">
           <h2 className="text-xl font-semibold">{itemName}</h2>
-          <p className="text-lg text-gray-600">{`Price: ₹${itemPrice}`}</p>
+          <p className="text-lg text-gray-600">{`Price: $${itemPrice}`}</p>
         </div>
 
         {/* Subtotal, Fees, and Totals */}
         <div className="space-y-4">
           <div className="flex justify-between">
             <p className="text-sm text-gray-600">Subtotal</p>
-            <p className="font-medium text-gray-800">{`₹${itemPrice}`}</p>
+            <p className="font-medium text-gray-800">{`$${itemPrice}`}</p>
           </div>
 
           <div className="flex justify-between">
-            <p className="text-sm text-gray-600">Fee</p>
-            <p className="font-medium text-gray-800">{`₹${fee}`}</p>
+            <p className="text-sm text-gray-600">Fee (Vault Charge)</p>
+            <p className="font-medium text-gray-800">{`$${fee}`}</p>
           </div>
 
           <div className="flex justify-between">
             <p className="text-sm text-gray-600">VAT (15%)</p>
-            <p className="font-medium text-gray-800">{`₹${(itemPrice * vat).toFixed(2)}`}</p>
+            <p className="font-medium text-gray-800">{`$${(itemPrice * vat).toFixed(2)}`}</p>
           </div>
 
           <div className="flex justify-between">
-            <p className="text-sm text-gray-600">Promo/Discount</p>
-            <p className="font-medium text-gray-800">- ₹{discount}</p>
+            <p className="text-sm text-gray-600">Transaction Fee</p>
+            <p className="font-medium text-gray-800">{`$${(itemPrice * vat).toFixed(2)}`}</p>
           </div>
+        </div>
 
-          <div className="flex justify-between font-semibold">
-            <p>Total (including taxes)</p>
-            <p>{`₹${total.toFixed(2)}`}</p>
-          </div>
+        {/* Promo Code Input */}
+        <div className="space-y-2">
+          <Label htmlFor="promoCode">Enter Promo Code</Label>
+          <Input
+            type="text"
+            id="promoCode"
+            value={promoCode}
+            onChange={(e) => setPromoCode(e.target.value)}
+            placeholder="Promo code (optional)"
+          />
+        </div>
+
+        <div className="flex justify-between">
+          <p className="text-sm text-gray-600">Promo/Discount</p>
+          <p className="font-medium text-gray-800">- ${discount}</p>
+        </div>
+
+        <div className="flex justify-between font-semibold">
+          <p>Total (including taxes)</p>
+          <p>{`$${total.toFixed(2)}`}</p>
         </div>
 
         {/* Payment Method */}
@@ -125,18 +142,6 @@ const Checkout = () => {
           </div>
         </div>
 
-        {/* Promo Code Input */}
-        <div className="space-y-2">
-          <Label htmlFor="promoCode">Enter Promo Code</Label>
-          <Input
-            type="text"
-            id="promoCode"
-            value={promoCode}
-            onChange={(e) => setPromoCode(e.target.value)}
-            placeholder="Promo code (optional)"
-          />
-        </div>
-
         {/* Terms and Conditions */}
         <div className="flex items-center space-x-2">
           <input
@@ -158,7 +163,7 @@ const Checkout = () => {
         <Link href="/dashboard/success">
           <div className="my-2 flex justify-between gap-4">
             <Button className="w-full bg-green-600 hover:bg-green-500">
-              Payment
+              Confirm
             </Button>
           </div>
         </Link>
