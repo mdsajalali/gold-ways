@@ -5,9 +5,9 @@ import { ArrowLeftCircleIcon, BellAlertIcon } from "@heroicons/react/20/solid";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { BuyDropdown } from "@/components/core/BuyDropdown";
-import { RegularPriceModal } from "@/components/core/RegularPriceModal";
 import { useState } from "react";
 import Image from "next/image";
+import LivePrice from "@/components/core/LivePrice";
 
 const assetName = "Digital GOLD";
 
@@ -94,8 +94,8 @@ const Gift = () => {
                 <Label>= 0.11123g</Label>
               </div>
             </div>
-
-            <RegularPriceModal />
+            {/* Live Price */}
+            <LivePrice />
 
             {/* User ID and OTP input fields */}
             <div className="mt-4">

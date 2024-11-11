@@ -5,6 +5,10 @@ import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { BuyDropdown } from "@/components/core/BuyDropdown";
 import { RegularPriceModal } from "@/components/core/RegularPriceModal";
+import Image from "next/image";
+import { Separator } from "@/components/ui/separator";
+import { ClockIcon } from "lucide-react";
+import LivePrice from "@/components/core/LivePrice";
 
 const Buy = () => {
   return (
@@ -34,6 +38,7 @@ const Buy = () => {
         </div>
 
         <div className="mt-4 rounded-lg bg-white p-4 shadow-md">
+          <LivePrice />
           <div>
             <p className="mb-1 font-medium text-gray-500">
               Buy 2434k, 999 pursuit Digital GOLD
@@ -51,7 +56,6 @@ const Buy = () => {
               </div>
             </div>
 
-            <RegularPriceModal />
             <Link href="/dashboard/checkout">
               <Button className="mt-4 w-full">Buy</Button>
             </Link>

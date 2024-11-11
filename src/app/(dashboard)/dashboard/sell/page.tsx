@@ -4,7 +4,7 @@ import { ArrowLeftCircleIcon, BellAlertIcon } from "@heroicons/react/20/solid";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { BuyDropdown } from "@/components/core/BuyDropdown";
-import { RegularPriceModal } from "@/components/core/RegularPriceModal";
+import LivePrice from "@/components/core/LivePrice";
 
 const Sell = () => {
   return (
@@ -34,6 +34,7 @@ const Sell = () => {
         </div>
 
         <div className="mt-4 rounded-lg bg-white p-4 shadow-md">
+          <LivePrice />
           <div>
             <p className="mb-1 font-medium text-gray-500">
               Buy 2434k, 999 pursuit Digital GOLD
@@ -51,7 +52,6 @@ const Sell = () => {
               </div>
             </div>
 
-            <RegularPriceModal />
             <Link href="/dashboard/checkout">
               <Button className="mt-4 w-full">Sell</Button>
             </Link>
