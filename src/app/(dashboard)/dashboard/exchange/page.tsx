@@ -4,7 +4,9 @@ import { ArrowLeftCircleIcon, BellAlertIcon } from "@heroicons/react/20/solid";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { BuyDropdown } from "@/components/core/BuyDropdown";
-import LivePrice from "@/components/core/LivePrice";
+import { Separator } from "@/components/ui/separator";
+import { ClockIcon } from "lucide-react";
+import Converter from "@/components/core/Converter";
 
 const Exchange = () => {
   return (
@@ -35,26 +37,51 @@ const Exchange = () => {
 
         <div className="mt-4 rounded-lg bg-white p-4 shadow-md">
           {/* Live Price */}
-          <LivePrice />
-          <div>
-            <p className="mb-1 font-medium text-gray-500">
-              Buy 2434k, 999 pursuit Digital GOLD
-            </p>
-
-            <div className="flex flex-col items-center justify-between gap-2 py-2 sm:flex-row">
-              <div className="flex w-full gap-x-4 sm:w-auto">
-                <BuyDropdown />
-              </div>
-              <div className="flex w-full items-center gap-2 sm:w-auto">
-                <Input type="text" placeholder="input" />
-                <Input type="text" placeholder="value" />
-              </div>
-              <div className="w-full text-right sm:w-auto sm:text-left">
-                <Label>= 0.11123g</Label>
+          <div className="rounded-lg bg-white">
+            <div className="flex cursor-pointer flex-wrap items-center gap-2">
+              <span className="relative flex h-3 w-3">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-red-400 opacity-75" />
+                <span className="relative inline-flex h-3 w-3 rounded-full bg-red-500"></span>
+              </span>
+              <h2 className="text-sm font-semibold">Live Price</h2>
+            </div>
+            <div className="flex flex-row justify-between pb-4 pt-4">
+              <div className="flex items-center gap-x-2">
+                <ClockIcon
+                  aria-hidden="true"
+                  className="h-6 w-5 text-gray-400"
+                />
+                <span className="text-sm leading-6 text-gray-500">
+                  <p>Price updated 6 min ago</p>
+                </span>
               </div>
             </div>
 
-            <Link href="/dashboard/checkout">
+            {/* Price Information */}
+            <div className="my-5 flex flex-col items-center justify-center gap-4 rounded bg-white px-4 py-3 shadow-md md:flex-row md:items-start md:justify-between md:p-6">
+              <p className="w-full text-center text-sm font-semibold text-yellow-500 sm:w-1/3 sm:text-left">
+                22 KARAT Gold
+              </p>
+              <p className="w-full text-center text-sm sm:w-1/3 sm:text-left">
+                ৳12,008
+              </p>
+              <div className="w-full text-center text-sm text-green-500 sm:w-1/3 sm:text-left">
+                <div className="flex items-center justify-center text-sm text-green-500 md:justify-start">
+                  <span className="mr-2 text-gray-400">
+                    This price includes
+                  </span>
+                  <span> 15% </span>
+                  <span className="ml-2 text-gray-400"> VAT </span>
+                </div>
+              </div>
+            </div>
+
+            <Separator className="my-4" />
+          </div>
+          <div>
+            {/* Converter */}
+            <Converter />
+            <Link href="/dashboard/checkout" className="pb-28">
               <Button className="mt-4 w-full">Exchange</Button>
             </Link>
           </div>

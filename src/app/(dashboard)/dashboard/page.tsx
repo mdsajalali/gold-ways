@@ -1,3 +1,4 @@
+import Converter from "@/components/core/Converter";
 import ShadcnChart from "@/components/core/ShadcnCharts";
 import Image from "next/image";
 import Link from "next/link";
@@ -47,7 +48,8 @@ const Dashboard = () => {
         </div>
       </div>
 
-      <ShadcnChart />
+      {/* Converter */}
+      <Converter />
 
       {/* Stock Info */}
       <section className="p-4">
@@ -157,7 +159,7 @@ const Dashboard = () => {
               </p>
 
               <div className="mt-3 w-full sm:mt-0 sm:flex sm:w-auto sm:justify-end">
-                <button className="flex w-full mx-auto sm:pb-0 pb-10 items-center justify-center space-x-3 text-sm text-blue-400 sm:space-x-4">
+                <button className="mx-auto flex w-full items-center justify-center space-x-3 pb-10 text-sm text-blue-400 sm:space-x-4 sm:pb-0">
                   <span className="hover:underline">Buy</span>
                   <span className="text-gray-400">|</span>
                   <span className="hover:underline">Sell</span>

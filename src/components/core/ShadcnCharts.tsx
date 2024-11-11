@@ -38,7 +38,7 @@ export default function ShadcnChart() {
       <Card className="shadow-md">
         <CardHeader>
           <CardTitle>Last Year Gold Pricing</CardTitle>
-          <CardDescription>Comparison of the previus gold rate</CardDescription>
+          <CardDescription>Comparison of the previous gold rate</CardDescription>
         </CardHeader>
         <CardContent>
           <ChartContainer
