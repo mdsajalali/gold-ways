@@ -1,5 +1,6 @@
 "use client";
 
+import GoldTrading from "@/components/core/GoldTrading";
 import React, { useState } from "react";
 
 interface Loan {
@@ -60,6 +61,8 @@ const Services: React.FC = () => {
 
   return (
     <div className="container mx-auto p-6">
+      {/* Gold Trading */}
+      <GoldTrading />
       {/* Loan Management Section */}
       <section className="mb-8">
         <h2 className="mb-4 text-2xl font-bold text-gray-900 dark:text-white">
