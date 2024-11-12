@@ -73,12 +73,6 @@ const secondaryNavigation = [
     current: false,
   },
   { name: "Help", href: "/help", icon: QuestionMarkCircleIcon, current: false },
-  {
-    name: "Logout",
-    href: "/logout",
-    icon: ArrowLeftOnRectangleIcon,
-    current: false,
-  },
 ];
 
 function classNames(...classes: any) {
@@ -100,7 +94,7 @@ export default function Page() {
         <nav className="flex-none pl-4 pr-8 sm:px-6 lg:px-0">
           <ul
             role="list"
-            className="flex flex-col gap-x-3 gap-y-1 max-w-[300px] whitespace-nowrap"
+            className="flex max-w-[300px] flex-col gap-x-3 gap-y-1 whitespace-nowrap"
           >
             {secondaryNavigation.map((item) => (
               <li key={item.name}>

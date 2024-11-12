@@ -5,12 +5,11 @@ import { useState } from "react";
 
 const AccountNav = () => {
   const [isToggle, setIsToggle] = useState(true);
+  const [isEnglish, setIsEnglish] = useState(true);
 
   const handleToggle = () => {
     setIsToggle(!isToggle);
   };
-
-  const [isEnglish, setIsEnglish] = useState(true);
 
   const toggleLanguage = () => {
     setIsEnglish(!isEnglish);
