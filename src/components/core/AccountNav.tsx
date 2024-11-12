@@ -19,7 +19,7 @@ const AccountNav = () => {
     <section className="flex items-center justify-between px-4 py-5 md:hidden">
       <h1 className="text-[18px] font-medium">My Account</h1>
       <div className="flex items-center gap-2">
-        <div className="flex items-center gap-2 rounded-full bg-gray-200">
+        <div className="flex items-center gap-1 rounded-full bg-gray-200">
           {/* English Language Option */}
           <div
             className={`${
