@@ -13,6 +13,7 @@ import {
 
 import TransactionsHistory from "@/components/core/TransactionsHistory";
 import AccountNav from "@/components/core/AccountNav";
+import AccountProfile from "@/components/core/AccountProfile";
 
 const secondaryNavigation = [
   {
@@ -88,8 +89,12 @@ export default function Page() {
     <>
       {/* Account Navbar */}
       <AccountNav />
+
+      {/* Account Profile */}
+      <AccountProfile />
+
       {/* Sidebar */}
-      <div className="pb-10">
+      <div className="pb-20 pt-10">
         <nav className="flex-none pl-4 pr-8 sm:px-6 lg:px-0">
           <ul
             role="list"
