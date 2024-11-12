@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { ChevronLeft } from "lucide-react";
+import { ArrowDownLeft, ChevronLeft } from "lucide-react";
 import Link from "next/link";
 
 const TransactionHistory = () => {
@@ -46,6 +46,144 @@ const TransactionHistory = () => {
           onClick={() => setSelected("yesterday")}
         >
           <h1 className="text-[14px] font-medium">Yesterday</h1>
+        </div>
+      </div>
+      <div>
+        {/* Header Section */}
+        <div className="my-5 flex items-center justify-between gap-4 rounded-lg bg-white p-4 shadow-md">
+          <h1 className="text-xl font-semibold text-gray-800">Transactions</h1>
+          <span className="text-lg font-medium text-green-600">$12,001</span>
+        </div>
+
+        {/* Transaction List */}
+        <div className="space-y-4">
+          <div className="rounded-lg border border-gray-200 bg-white p-4 shadow-sm transition-all hover:shadow-lg">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-4">
+                {/* Icon and Text */}
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gray-100 text-gray-500">
+                  <ArrowDownLeft size={20} />
+                </div>
+                <div>
+                  <h3 className="font-semibold text-gray-800">#00000007</h3>
+                  <p className="text-sm text-gray-500">
+                    Oct 29, 2024 . 5:33 PM
+                  </p>
+                </div>
+              </div>
+              {/* Amount */}
+              <div className="text-lg font-semibold text-red-600">$100</div>
+            </div>
+          </div>
+        </div>
+        {/* Transaction List */}
+        <div className="space-y-4 py-5">
+          <div className="rounded-lg border border-gray-200 bg-white p-4 shadow-sm transition-all hover:shadow-lg">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-4">
+                {/* Icon and Text */}
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gray-100 text-gray-500">
+                  <ArrowDownLeft size={20} />
+                </div>
+                <div>
+                  <h3 className="font-semibold text-gray-800">#00000007</h3>
+                  <p className="text-sm text-gray-500">
+                    Oct 29, 2024 . 5:33 PM
+                  </p>
+                </div>
+              </div>
+              {/* Amount */}
+              <div className="text-lg font-semibold text-red-600">$100</div>
+            </div>
+          </div>
+        </div>
+
+        {/* Transaction List */}
+        <div className="space-y-4">
+          <div className="rounded-lg border border-gray-200 bg-white p-4 shadow-sm transition-all hover:shadow-lg">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-4">
+                {/* Icon and Text */}
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gray-100 text-gray-500">
+                  <ArrowDownLeft size={20} />
+                </div>
+                <div>
+                  <h3 className="font-semibold text-gray-800">#00000007</h3>
+                  <p className="text-sm text-gray-500">
+                    Oct 29, 2024 . 5:33 PM
+                  </p>
+                </div>
+              </div>
+              {/* Amount */}
+              <div className="text-lg font-semibold text-red-600">$100</div>
+            </div>
+          </div>
+        </div>
+
+        {/* Transaction List */}
+        <div className="space-y-4 py-5">
+          <div className="rounded-lg border border-gray-200 bg-white p-4 shadow-sm transition-all hover:shadow-lg">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-4">
+                {/* Icon and Text */}
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gray-100 text-gray-500">
+                  <ArrowDownLeft size={20} />
+                </div>
+                <div>
+                  <h3 className="font-semibold text-gray-800">#00000007</h3>
+                  <p className="text-sm text-gray-500">
+                    Oct 29, 2024 . 5:33 PM
+                  </p>
+                </div>
+              </div>
+              {/* Amount */}
+              <div className="text-lg font-semibold text-red-600">$100</div>
+            </div>
+          </div>
+        </div>
+
+        {/* Transaction List */}
+        <div className="space-y-4">
+          <div className="rounded-lg border border-gray-200 bg-white p-4 shadow-sm transition-all hover:shadow-lg">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-4">
+                {/* Icon and Text */}
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gray-100 text-gray-500">
+                  <ArrowDownLeft size={20} />
+                </div>
+                <div>
+                  <h3 className="font-semibold text-gray-800">#00000007</h3>
+                  <p className="text-sm text-gray-500">
+                    Oct 29, 2024 . 5:33 PM
+                  </p>
+                </div>
+              </div>
+              {/* Amount */}
+              <div className="text-lg font-semibold text-red-600">$100</div>
+            </div>
+          </div>
+        </div>
+
+        {/* Transaction List */}
+        <div className="space-y-4 pb-20 pt-5">
+          <div className="rounded-lg border border-gray-200 bg-white p-4 shadow-sm transition-all hover:shadow-lg">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-4">
+                {/* Icon and Text */}
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gray-100 text-gray-500">
+                  <ArrowDownLeft size={20} />
+                </div>
+                <div>
+                  <h3 className="font-semibold text-gray-800">#00000007</h3>
+                  <p className="text-sm text-gray-500">
+                    Oct 29, 2024 . 5:33 PM
+                  </p>
+                </div>
+              </div>
+              {/* Amount */}
+              <div className="text-lg font-semibold text-red-600">$100</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
