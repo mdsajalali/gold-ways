@@ -1,9 +1,9 @@
-import TransactionHistory from "@/components/core/TransactionHistory";
+import ComingSoon from "@/components/core/ComingSoon";
 
 const page = () => {
   return (
     <>
-      <TransactionHistory />
+      <ComingSoon />
     </>
   );
 };

@@ -1,6 +1,6 @@
+import AccountProfile from "@/components/core/AccountProfile";
 import Converter from "@/components/core/Converter";
 import { AlignJustify, Bell } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
 
 const Dashboard = () => {
@@ -9,56 +9,21 @@ const Dashboard = () => {
       <div className="px-4 md:flex md:items-center md:justify-between md:space-x-5">
         <div className="flex items-center justify-between gap-2">
           <div className="flex items-start space-x-5">
-            <div className="flex-shrink-0">
-              <div className="relative">
-                <Image src="/user.png" width={50} height={50} alt="user" />
-                <span
-                  aria-hidden="true"
-                  className="absolute inset-0 rounded-full shadow-inner"
-                />
-              </div>
-            </div>
-
             <div className="pt-1.5">
-              <h1 className="text-2xl font-bold text-gray-900">Sajal</h1>
-              <p className="text-sm font-medium text-gray-500">
-                something is there
-              </p>
+              <h1 className="text-2xl font-bold text-gray-900">Welcome</h1>
             </div>
           </div>
           <div className="flex gap-2">
-            <Bell />
+            <Link href="/notification">
+              <Bell />
+            </Link>
             <AlignJustify />
           </div>
         </div>
-        <div className="flex flex-col-reverse justify-stretch space-y-4 space-y-reverse pb-10 sm:flex-row-reverse sm:justify-end sm:space-x-3 sm:space-y-0 sm:space-x-reverse md:mt-0 md:flex-row md:space-x-3">
-          <div className="mt-4 rounded-lg bg-white p-4 shadow-md">
-            <div className="my-2 flex items-center justify-between rounded-lg bg-zinc-50 p-4">
-              <p className="text-sm text-amber-500">
-                <span className="font-medium text-black">24k</span> Gold
-              </p>
-              <p className="text-lg font-bold">2 Gram</p>
-            </div>
-            <div className="my-2 flex items-center justify-between rounded-lg bg-zinc-50 p-4">
-              <p className="text-sm text-amber-500">
-                <span className="font-medium text-black">18k</span> Gold
-              </p>
-              <p className="text-lg font-bold">2 Gram</p>
-            </div>
-            <p className="flex items-center gap-2 text-lg font-medium text-zinc-950">
-              Your total balance : ৳5000
-              <Link href="/market-rate">
-                <svg width="16" height="16" fill="currentColor">
-                  <path d="M9 11a1 1 0 11-2 0 1 1 0 012 0zM10.443 4.8A2.3 2.3 0 007.3 3.96L5.136 5.21l.8 1.385L8.1 5.345a.7.7 0 01.7 1.212l-2.165 1.25.8 1.386L9.6 7.943a2.3 2.3 0 00.842-3.142z"></path>
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M8 16A8 8 0 108 0a8 8 0 000 16zm0-1.6A6.4 6.4 0 108 1.6a6.4 6.4 0 000 12.8z"
-                  ></path>
-                </svg>
-              </Link>
-            </p>
-          </div>
+
+        {/* Account Profile */}
+        <div className="py-7">
+          <AccountProfile />
         </div>
       </div>
 

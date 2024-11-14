@@ -14,7 +14,7 @@ import {
 import TransactionsHistory from "@/components/core/TransactionsHistory";
 import AccountNav from "@/components/core/AccountNav";
 import AccountProfile from "@/components/core/AccountProfile";
-import { ChevronRight } from "lucide-react";
+import { ChevronRight, ReceiptText } from "lucide-react";
 
 const secondaryNavigation = [
   {
@@ -53,6 +53,13 @@ const secondaryNavigation = [
     icon: BellIcon,
     current: false,
   },
+
+  {
+    name: "Transactions",
+    href: "/transactions",
+    icon: ReceiptText,
+    current: false,
+  },
   {
     name: "Resubmit KYC",
     href: "/resubmit-kyc",
@@ -73,6 +80,12 @@ const secondaryNavigation = [
     current: false,
   },
   { name: "Help", href: "/help", icon: QuestionMarkCircleIcon, current: false },
+  {
+    name: "Log out from this device",
+    href: "#",
+    icon: ArrowLeftOnRectangleIcon,
+    current: false,
+  },
 ];
 
 function classNames(...classes: any) {
@@ -135,7 +148,10 @@ export default function Page() {
             className="flex flex-col gap-x-3 gap-y-1 whitespace-nowrap"
           >
             {secondaryNavigation.map((item) => (
-              <li key={item.name}>
+              <li
+                key={item.name}
+                className="my-1 rounded-md bg-gray-100 p-[6px]"
+              >
                 <a
                   href={item.href}
                   className={classNames(
@@ -163,40 +179,6 @@ export default function Page() {
             ))}
           </ul>
         </nav>
-
-        {/* Logout Button */}
-        <div className="flex flex-col gap-2 px-4 pt-5">
-          <div className="flex items-center justify-center rounded-md bg-gray-100">
-            <a
-              href="#"
-              className={classNames(
-                "text-gray-700 hover:bg-gray-50 hover:text-amber-600",
-                "group mt-4 flex gap-x-3 rounded-md pb-3 pl-2 pr-3 text-sm font-semibold leading-6",
-              )}
-            >
-              <ArrowLeftOnRectangleIcon
-                aria-hidden="true"
-                className="h-6 w-6 shrink-0 text-gray-400 group-hover:text-amber-600"
-              />
-              Log out from this device
-            </a>
-          </div>
-          <div className="flex items-center justify-center rounded-md bg-gray-100">
-            <a
-              href="#"
-              className={classNames(
-                "text-gray-700 hover:bg-gray-50 hover:text-amber-600",
-                "group mt-4 flex gap-x-3 rounded-md pb-3 pl-2 pr-3 text-sm font-semibold leading-6",
-              )}
-            >
-              <ArrowLeftOnRectangleIcon
-                aria-hidden="true"
-                className="h-6 w-6 shrink-0 text-gray-400 group-hover:text-amber-600"
-              />
-              Log out from this device
-            </a>
-          </div>
-        </div>
 
         {/* Transactions History */}
         {/* <TransactionsHistory /> */}
