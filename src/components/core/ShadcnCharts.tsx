@@ -6,7 +6,6 @@ import {
   XAxis,
   YAxis,
   CartesianGrid,
-  Tooltip,
   Legend,
   ResponsiveContainer,
 } from "recharts";
@@ -37,9 +36,9 @@ export default function ShadcnChart() {
     <div className="p-4">
       <Card className="shadow-md">
         <CardHeader>
-          <CardTitle>Last Year Gold Pricing</CardTitle>
-          <CardDescription>Comparison of the previous gold rate</CardDescription>
+          <CardDescription>Comparison of the previous rate</CardDescription>
         </CardHeader>
+
         <CardContent>
           <ChartContainer
             config={{
@@ -110,20 +109,38 @@ export default function ShadcnChart() {
                   dot={false}
                   activeDot={{ r: 8 }}
                 />
-                {/* <Area
-                type="monotone"
-                dataKey="series2"
-                stroke="hsl(150, 100%, 40%)"
-                strokeWidth={2}
-                fillOpacity={1}
-                fill="url(#colorSeries2)"
-                dot={false}
-                activeDot={{ r: 8 }}
-              /> */}
+                <Area
+                  type="monotone"
+                  dataKey="series2"
+                  stroke="hsl(150, 100%, 40%)"
+                  strokeWidth={2}
+                  fillOpacity={1}
+                  fill="url(#colorSeries2)"
+                  dot={false}
+                  activeDot={{ r: 8 }}
+                />
               </AreaChart>
             </ResponsiveContainer>
           </ChartContainer>
         </CardContent>
+
+        {/* Select Box */}
+        <div className="my-5 flex items-center gap-5 px-2">
+          <label htmlFor="" className="mt-2">
+            Select Type
+          </label>
+          <div className="flex-1 pt-2 sm:pt-0">
+            <select
+              id="select"
+              className="mt-1 block w-full rounded-md border border-gray-300 px-4 py-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            >
+              <option value="bdt">BDT</option>
+              <option value="dollar">Dollar</option>
+              <option value="gold22">22K GOLD</option>
+              <option value="gold18">18K GOLD</option>
+            </select>
+          </div>
+        </div>
       </Card>
     </div>
   );
