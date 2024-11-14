@@ -1,4 +1,5 @@
 "use client";
+import Header from "@/components/core/Header";
 import { useState } from "react";
 
 const page = () => {
@@ -42,6 +43,9 @@ const page = () => {
   };
   return (
     <>
+      <div className="p-4">
+        <Header title="Notification" />
+      </div>
       {/* notification  */}
 
       <div className="container mx-auto p-6 dark:bg-neutral-900 dark:text-neutral-100">

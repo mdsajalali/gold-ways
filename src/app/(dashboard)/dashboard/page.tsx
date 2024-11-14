@@ -1,25 +1,14 @@
 import AccountProfile from "@/components/core/AccountProfile";
 import Converter from "@/components/core/Converter";
-import { AlignJustify, Bell } from "lucide-react";
+import Header from "@/components/core/Header";
 import Link from "next/link";
 
 const Dashboard = () => {
   return (
     <div className="container mx-auto mt-5">
       <div className="px-4 md:flex md:items-center md:justify-between md:space-x-5">
-        <div className="flex items-center justify-between gap-2">
-          <div className="flex items-start space-x-5">
-            <div className="pt-1.5">
-              <h1 className="text-2xl font-bold text-gray-900">Welcome</h1>
-            </div>
-          </div>
-          <div className="flex gap-2">
-            <Link href="/notification">
-              <Bell />
-            </Link>
-            <AlignJustify />
-          </div>
-        </div>
+        {/* Header */}
+        <Header title="Welcome" />
 
         {/* Account Profile */}
         <div className="py-7">
