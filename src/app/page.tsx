@@ -8,7 +8,7 @@ const page = () => {
       {/* Background Image */}
       <div
         className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: "url('/images/gold_bg.jpg')" }}
+        style={{ backgroundImage: "url('/gold_bg.jpg')" }}
       />
       {/* Overlay with background color and opacity */}
       <div className="absolute inset-0 bg-black opacity-85" />

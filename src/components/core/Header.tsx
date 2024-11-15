@@ -10,7 +10,7 @@ const Header = ({ title }: { title: string }) => {
           <h1 className="text-2xl font-bold text-gray-900">{title}</h1>
         </div>
       </div>
-      <div className="flex gap-2">
+      <div className="flex gap-2 md:hidden">
         <Link href="/notification">
           <Bell />
         </Link>

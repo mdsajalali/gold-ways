@@ -14,7 +14,7 @@ export default function Page() {
   return (
     <div
       className="relative flex min-h-screen items-center justify-center bg-cover bg-center px-5"
-      style={{ backgroundImage: "url('/images/login_banner.jpg')" }}
+      style={{ backgroundImage: "url('/login_banner.jpg')" }}
     >
       {/* Overlay */}
       <div className="absolute inset-0 bg-black opacity-50" />
