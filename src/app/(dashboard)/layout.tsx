@@ -1,13 +1,7 @@
-import type { Metadata } from "next";
 import BottomNavigation from "@/components/core/BottomNavigation";
 import HeaderNavigation from "@/components/core/HeaderNavigation";
 
-export const metadata: Metadata = {
-  title: "Gold Ways",
-  description: "Powered by Tech Sand",
-};
-
-export default function RootLayout({
+export default function DashboardLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
