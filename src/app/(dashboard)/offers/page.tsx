@@ -1,5 +1,6 @@
 "use client";
 
+import OffersCard from "@/components/core/OffersCard";
 import React, { useState, useEffect } from "react";
 import "tailwindcss/tailwind.css";
 
@@ -154,6 +155,9 @@ const Offers = () => {
           ))}
         </div>
       </section>
+
+      {/* Offers card */}
+      <OffersCard />
     </div>
   );
 };
