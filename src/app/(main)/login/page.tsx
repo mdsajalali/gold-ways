@@ -71,8 +71,8 @@ export default function Page() {
           </Link>
           <div className="mt-5 flex flex-col items-center">
             <Link
-              href={"/registration"}
-              className="ml-1 text-[14px] font-medium text-black hover:underline"
+              href={"/support-contact"}
+              className="ml-1 text-[14px] font-medium text-black underline"
             >
               Contact customer support
             </Link>
