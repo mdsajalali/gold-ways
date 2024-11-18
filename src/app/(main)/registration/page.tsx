@@ -20,7 +20,15 @@ export default function Page() {
       <div className="absolute inset-0 bg-black opacity-50" />
 
       <div className="relative z-10 mx-auto w-full rounded-lg bg-white/40 p-6 shadow-md md:w-1/2 lg:w-1/3">
-        <h1 className="mb-4 text-center text-2xl font-bold">Registration</h1>
+        <h1 className="mb-4 text-center text-2xl font-bold">
+          Sign up to Ways Gold
+        </h1>
+        <p className="text-center text-[14px]">
+          Already have an account?{" "}
+          <Link className="underline" href="/login">
+            Sign in
+          </Link>
+        </p>
         <form className="flex flex-col">
           <input
             type="text"
@@ -53,6 +61,12 @@ export default function Page() {
               )}
             </button>
           </div>
+          <Link
+            className="mt-2 text-[14px] hover:underline"
+            href="/forget-password"
+          >
+            Forgot password?
+          </Link>
           <Link href={"/otp"}>
             <button
               type="submit"
@@ -62,15 +76,12 @@ export default function Page() {
             </button>
           </Link>
           <div className="mt-5 flex flex-col items-center">
-            <p className="mt-1 text-xs font-light">
-              Already have an account?
-              <Link
-                href={"/login"}
-                className="ml-1 font-medium text-black hover:underline"
-              >
-                Login now
-              </Link>
-            </p>
+            <Link
+              href={"/registration"}
+              className="ml-1 text-[14px] font-medium text-black hover:underline"
+            >
+              Contact customer support
+            </Link>
           </div>
         </form>
       </div>

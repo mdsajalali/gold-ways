@@ -20,7 +20,15 @@ export default function Page() {
       <div className="absolute inset-0 bg-black opacity-50" />
 
       <div className="relative z-10 mx-auto w-full rounded-lg bg-white/40 p-6 shadow-md md:w-1/2 lg:w-1/3">
-        <h1 className="mb-4 text-center text-2xl font-bold">Login</h1>
+        <h1 className="mb-4 text-center text-2xl font-bold">
+          Sign in to Ways Gold
+        </h1>
+        <p className="text-center text-[14px]">
+          Don’t have an account?{" "}
+          <Link className="underline" href="/registration">
+            Sign up
+          </Link>
+        </p>
         <form className="flex flex-col">
           <input
             type="number"
@@ -47,24 +55,27 @@ export default function Page() {
               )}
             </button>
           </div>
+          <Link
+            className="mt-2 text-[14px] hover:underline"
+            href="/forget-password"
+          >
+            Forgot password?
+          </Link>
           <Link href={"/dashboard"}>
             <button
               type="submit"
               className="mt-4 inline-flex w-full cursor-pointer items-center justify-center rounded-md border border-transparent bg-black px-4 py-3 text-base font-medium leading-6 text-amber-100 duration-300 hover:bg-yellow-500 hover:text-black"
             >
-              Login
+              Sign in
             </button>
           </Link>
           <div className="mt-5 flex flex-col items-center">
-            <p className="mt-1 text-xs font-light">
-              New to Here?
-              <Link
-                href={"/registration"}
-                className="ml-1 font-medium text-black hover:underline"
-              >
-                Sign up now
-              </Link>
-            </p>
+            <Link
+              href={"/registration"}
+              className="ml-1 text-[14px] font-medium text-black hover:underline"
+            >
+              Contact customer support
+            </Link>
           </div>
         </form>
       </div>
