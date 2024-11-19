@@ -1,7 +1,12 @@
 "use client";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 const RecurringBuyTable = () => {
+  const router = useRouter();
+  const handleLink = (idx: any) => {
+    router.push(`/payment-scheduling/${idx}`);
+  };
   const data = [
     {
       id: "123456790",
@@ -70,7 +75,11 @@ const RecurringBuyTable = () => {
           </thead>
           <tbody>
             {data.map((row, idx) => (
-              <tr key={idx} className="hover:bg-gray-50">
+              <tr
+                onClick={() => handleLink(idx)}
+                key={idx}
+                className="hover:bg-gray-50 cursor-pointer"
+              >
                 <td className="border border-gray-300 px-4 py-2 text-blue-500">
                   {row.id}
                 </td>
