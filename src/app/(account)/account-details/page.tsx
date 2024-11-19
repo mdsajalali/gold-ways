@@ -59,7 +59,7 @@ const page = () => {
 
           {/* Action Buttons */}
           <div className="mt-6 flex justify-between gap-4">
-            <button className="w-full rounded-md bg-indigo-500 py-2 text-sm font-semibold text-white shadow hover:bg-indigo-600">
+            <button className="w-full rounded-md bg-yellow-500 py-2 text-sm font-semibold text-white shadow hover:bg-yellow-600">
               Edit Details
             </button>
             <button className="w-full rounded-md bg-red-500 py-2 text-sm font-semibold text-white shadow hover:bg-red-600">
