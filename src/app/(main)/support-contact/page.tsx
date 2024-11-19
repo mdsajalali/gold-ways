@@ -4,16 +4,16 @@ const page = () => {
   return (
     <div>
       <div className="container mx-auto flex items-center justify-between p-4">
-        <h1 className="text-2xl font-semibold uppercase">Logo</h1>
+        <Link href="/dashboard" className="text-2xl font-semibold uppercase">Logo</Link>
         <div className="flex gap-2">
           <Link
             href="/login"
-            className="rounded border border-yellow-400 bg-gray-100 px-3 py-[6px] text-sm duration-300 hover:bg-yellow-500"
+            className="rounded border hover:border-yellow-500 px-3 py-[6px] text-sm duration-300 hover:bg-yellow-500"
           >
             Sign in
           </Link>
           <Link
-            className="rounded border border-yellow-400 bg-gray-100 px-3 py-[6px] text-sm duration-300 hover:bg-yellow-500"
+            className="rounded border  hover:border-yellow-500 px-3 py-[6px] text-sm duration-300 hover:bg-yellow-500"
             href="/registration"
           >
             Sing up
@@ -63,7 +63,6 @@ const page = () => {
                 id="email"
                 placeholder="Enter your email"
                 className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 text-gray-700 shadow-sm focus:border-yellow-500 focus:outline-none focus:ring-yellow-500 sm:text-sm"
-                required
               />
             </div>
 
@@ -80,7 +79,6 @@ const page = () => {
                 id="subject"
                 placeholder="Enter the subject"
                 className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 text-gray-700 shadow-sm focus:border-yellow-500 focus:outline-none focus:ring-yellow-500 sm:text-sm"
-                required
               />
             </div>
 
@@ -97,7 +95,6 @@ const page = () => {
                 rows={4}
                 placeholder="Describe your issue"
                 className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 text-gray-700 shadow-sm focus:border-yellow-500 focus:outline-none focus:ring-yellow-500 sm:text-sm"
-                required
               ></textarea>
             </div>
 

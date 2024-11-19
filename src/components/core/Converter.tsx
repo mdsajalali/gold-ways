@@ -1,8 +1,10 @@
 "use client";
+
 import { useEffect, useState } from "react";
 import ShadcnChart from "./ShadcnCharts";
 import Link from "next/link";
 
+// Helper function to get the current date
 function getDate() {
   const today = new Date();
   const month = today.getMonth() + 1;
@@ -12,20 +14,19 @@ function getDate() {
 }
 
 const Converter = () => {
-  const [inputValue, setInputValue] = useState("");
-  const [selectedOption, setSelectedOption] = useState("");
-  const [currentDate, setCurrentDate] = useState(getDate());
+  const [inputValue, setInputValue] = useState(""); // User input value
+  const [selectedCurrency, setSelectedCurrency] = useState("bdt"); // Selected currency
+  const [grams, setGrams] = useState(""); // Computed grams
+  const [currentDate, setCurrentDate] = useState(getDate()); // Current date
+  const [time, setTime] = useState(""); // Current time
 
-  const handleInputChange = (e: any) => {
-    setInputValue(e.target.value);
+  // Conversion rates
+  const conversionRates: { [key: string]: number } = {
+    bdt: 200, // Example rate: 1 gram = 200 BDT
+    dollar: 50, // Example rate: 1 gram = 50 USD
   };
 
-  const handleSelectChange = (e: any) => {
-    setSelectedOption(e.target.value);
-  };
-
-  const [time, setTime] = useState("");
-
+  // Update time every second
   useEffect(() => {
     const updateTime = () => {
       const date = new Date();
@@ -34,18 +35,43 @@ const Converter = () => {
       setTime(showTime);
     };
 
-    // Update the time every second
     const intervalId = setInterval(updateTime, 1000);
-
-    // Cleanup the interval on component unmount
     return () => clearInterval(intervalId);
   }, []);
 
+  // Handle input change
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    setInputValue(value);
+
+    // Calculate grams if the input is valid
+    if (!isNaN(Number(value)) && selectedCurrency in conversionRates) {
+      setGrams(
+        (parseFloat(value) / conversionRates[selectedCurrency]).toFixed(2),
+      );
+    } else {
+      setGrams("");
+    }
+  };
+
+  // Handle currency selection change
+  const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const currency = e.target.value;
+    setSelectedCurrency(currency);
+
+    // Recalculate grams when currency changes
+    if (!isNaN(Number(inputValue)) && currency in conversionRates) {
+      setGrams((parseFloat(inputValue) / conversionRates[currency]).toFixed(2));
+    } else {
+      setGrams("");
+    }
+  };
+
   return (
     <div className="mx-auto w-full space-y-4 px-4">
+      {/* Header Section */}
       <div className="text-sm text-gray-600">
-        <h5 className="mb-2 text-2xl">Exchange rate calculator</h5>
-
+        <h5 className="mb-2 text-2xl">Exchange Rate Calculator</h5>
         <p>
           {currentDate} - {time}{" "}
           <span className="cursor-pointer text-amber-500">
@@ -54,67 +80,57 @@ const Converter = () => {
         </p>
       </div>
 
-      <div className="border p-1">
-        {/* Input Field */}
-        <div className="gap-5 md:flex">
-          <div className="flex-1">
-            <input
-              id="input"
-              type="text"
-              value={inputValue}
-              onChange={handleInputChange}
-              className="mt-1 block w-full rounded-md border border-gray-300 px-4 py-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 md:py-[5px]"
-            />
+      {/* Conversion Section */}
+      <div className="space-y-4 p-4">
+        {/* Currency Input */}
+        <div className="rounded-lg border p-4">
+          <div className="gap-5 md:flex">
+            <div className="flex-1">
+              <input
+                type="text"
+                value={inputValue}
+                onChange={handleInputChange}
+                placeholder="Enter amount"
+                className="mb-3 block w-full rounded-md border border-gray-300 px-4 py-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              />
+            </div>
+            <label htmlFor="currency" className="self-center">
+              In Currency
+            </label>
+            <div className="flex-1">
+              <select
+                id="currency"
+                value={selectedCurrency}
+                onChange={handleSelectChange}
+                className="mt-2 block w-full rounded-md border border-gray-300 px-4 py-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              >
+                <option value="bdt">BDT</option>
+                <option value="dollar">Dollar</option>
+              </select>
+            </div>
           </div>
-          <label htmlFor="label">In Currency</label>
+        </div>
 
-          {/* Select Box */}
-          <div className="flex-1 pt-2 sm:pt-0">
-            <select
-              id="select"
-              value={selectedOption}
-              onChange={handleSelectChange}
-              className="mt-1 block w-full rounded-md border border-gray-300 px-4 py-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
-            >
-              <option value="bdt">BDT</option>
-              <option value="dollar">Dollar</option>
-              <option value="gold22">22K GOLD</option>
-              <option value="gold18">18K GOLD</option>
-            </select>
+        {/* Grams Output */}
+        <div className="rounded-lg border p-4">
+          <div className="gap-5 md:flex">
+            <div className="flex-1">
+              <label htmlFor="grams" className="self-center">
+                In Grams
+              </label>
+              <input
+                type="text"
+                value={grams}
+                readOnly
+                placeholder="Quantity in grams"
+                className="mt-2 block w-full rounded-md border border-gray-300 px-4 py-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              />
+            </div>
           </div>
         </div>
       </div>
 
-      <div className="border p-1">
-        <div className="gap-5 md:flex">
-          <div className="flex-1">
-            <input
-              id="input"
-              type="text"
-              // value={inputValue}
-              // onChange={handleInputChange}
-              className="mt-1 block w-full rounded-md border border-gray-300 px-4 py-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 md:py-[5px]"
-            />
-          </div>
-
-          <label htmlFor="label">In Grams</label>
-          {/* Select Box */}
-          <div className="flex-1 pt-2 sm:pt-0">
-            <select
-              id="select"
-              value={selectedOption}
-              onChange={handleSelectChange}
-              className="mt-1 block w-full rounded-md border border-gray-300 px-4 py-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
-            >
-              <option value="bdt1">BDT</option>
-              <option value="dollar2">Dollar</option>
-              <option value="gold223">22K GOLD</option>
-              <option value="gold184">18K GOLD</option>
-            </select>
-          </div>
-        </div>
-      </div>
-
+      {/* Chart Component */}
       <ShadcnChart />
     </div>
   );
