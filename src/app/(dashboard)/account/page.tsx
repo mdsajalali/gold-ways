@@ -42,6 +42,12 @@ const secondaryNavigation = [
     current: false,
   },
   {
+    name: "Payment History",
+    href: "/payment-history",
+    icon: CalendarDaysIcon,
+    current: false,
+  },
+  {
     name: "Change PIN",
     href: "/change-pin",
     icon: FingerPrintIcon,
