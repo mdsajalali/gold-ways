@@ -20,43 +20,40 @@ const Dashboard = () => {
       <Converter />
 
       {/* Stock Info */}
-      <section className="p-4">
-        <div className="mb-4 flex items-center justify-between">
-          <h2 className="text-lg font-medium text-zinc-950">Offers</h2>
-          <button className="text-blue-400">See all</button>
+      <section className="rounded-lg bg-gradient-to-r from-white via-gray-100 to-gray-200 p-6 shadow-lg">
+        {/* Offers Section */}
+        <div className="mb-6 flex items-center justify-between">
+          <h2 className="text-xl font-semibold text-indigo-800">Offers</h2>
+          <button className="text-blue-500 hover:underline">See all</button>
         </div>
 
         {/* Stock Cards */}
-        <div className="grid grid-cols-2 gap-4">
-          <div className="rounded-lg bg-white p-4 shadow-md">
-            <p className="text-md font-bold text-yellow-500">22k 10gm Gold</p>
-            <p className="text-lg font-bold">৳7000</p>
-            <p className="text-green-500">(-0.72%)</p>
+        <div className="grid grid-cols-2 gap-6">
+          <div className="rounded-xl bg-white p-6 shadow-md transition-transform duration-300">
+            <p className="text-lg font-bold text-yellow-500">22k 10gm Gold</p>
+            <p className="text-2xl font-extrabold text-gray-900">৳7000</p>
+            <p className="font-medium text-green-600">(-0.72%)</p>
           </div>
-          <div className="rounded-lg bg-white p-4 shadow-md">
-            <p className="text-md font-bold text-yellow-500">
+          <div className="rounded-xl bg-white p-6 shadow-md transition-transform duration-300">
+            <p className="text-lg font-bold text-yellow-500">
               Traditional 10gm Gold
             </p>
-            <p className="text-lg font-bold">৳5000</p>
-            <p className="text-green-500">(-0.72%)</p>
+            <p className="text-2xl font-extrabold text-gray-900">৳5000</p>
+            <p className="font-medium text-green-600">(-0.72%)</p>
           </div>
         </div>
 
         {/* Market Price */}
-        <div className="mt-4">
-          <h2 className="text-lg font-medium text-zinc-950">
+        <div className="mt-8">
+          <h2 className="text-xl font-semibold text-indigo-800">
             Today Market Price (in GRAM)
           </h2>
+          <p className="mt-4 text-sm font-medium text-gray-600">
+            CADMIUM (HALLMARKED)
+          </p>
+          <hr className="my-4 border-gray-300" />
 
-          {/* <div className="p-4 bg-white shadow-md rounded-lg flex justify-between items-center">
-            <p className="text-lg">Product</p>
-            <p className="text-lg">Price</p>
-            <p className="text-lg">Value</p>
-          </div> */}
-          <br />
-          <p className="text-sm">CADMIUM (HALLMARKED)</p>
-          <hr />
-          <br />
+          {/* Market Price List */}
           {[
             { product: "22 KARAT Gold", price: "৳12,008", value: "+0.25%" },
             { product: "21 KARAT Gold", price: "৳11,463", value: "+0.25%" },
@@ -67,24 +64,24 @@ const Dashboard = () => {
           ].map((item, index) => (
             <div
               key={index}
-              className="my-5 flex flex-col items-center justify-center gap-4 rounded border bg-white px-4 py-3 md:flex-row md:items-start md:justify-between md:p-6"
+              className="my-6 flex flex-col items-center justify-center gap-6 rounded-xl border bg-white p-6 shadow-md transition-transform duration-300 md:flex-row md:items-start md:justify-between"
             >
-              <div className="flex gap-5">
-                <p className="w-full text-center text-sm font-semibold text-yellow-500 sm:w-1/3 sm:text-left">
+              <div className="flex md:gap-6 gap-3">
+                <p className="w-full text-[16px] text-center md:text-lg font-semibold text-yellow-500   sm:text-left">
                   {item.product}
                 </p>
-                <div className="flex gap-5">
-                  <p className="w-full text-center text-sm sm:w-1/3 sm:text-left">
+                
+                <div className="flex gap-6">
+                  <p className="w-full text-center text-lg font-bold text-gray-900 sm:w-1/3 sm:text-left">
                     {item.price}
                   </p>
-                  <p className="w-full text-center text-sm text-green-500 sm:w-1/3 sm:text-left">
+                  <p className="w-full text-center text-lg font-medium text-green-600 sm:w-1/3 sm:text-left">
                     {item.value}
                   </p>
                 </div>
               </div>
-
-              <div className="mt-3 w-full sm:mt-0 sm:flex sm:w-auto sm:justify-end">
-                <button className="mx-auto flex w-full items-center justify-center space-x-3 text-sm text-blue-400 sm:space-x-4">
+              <div className="mt-4 w-full sm:mt-0 sm:flex sm:w-auto sm:justify-end">
+                <button className="flex w-full items-center justify-center space-x-3 text-lg font-medium text-blue-500 sm:space-x-8">
                   <Link href={"/dashboard/buy"} className="hover:underline">
                     Buy
                   </Link>
