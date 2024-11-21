@@ -86,18 +86,22 @@ const Converter = () => {
         <div className="rounded-lg border p-4">
           <div className="gap-5 md:flex">
             <div className="flex-1">
+              <label htmlFor="grams" className="self-center">
+                Amount
+              </label>
               <input
                 type="text"
                 value={inputValue}
                 onChange={handleInputChange}
                 placeholder="Enter amount"
-                className="mb-3 block w-full rounded-md border border-gray-300 px-4 py-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                className="mb-3 block w-full mt-1 rounded-md border border-gray-300 px-4 py-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
               />
             </div>
-            <label htmlFor="currency" className="self-center">
-              In Currency
-            </label>
+
             <div className="flex-1">
+              <label htmlFor="currency" className="self-center">
+                In Currency
+              </label>
               <select
                 id="currency"
                 value={selectedCurrency}
@@ -112,19 +116,33 @@ const Converter = () => {
         </div>
 
         {/* Grams Output */}
-        <div className="rounded-lg border p-4">
-          <div className="gap-5 md:flex">
+        <div className="flex items-center gap-5 rounded-lg border p-4">
+          <div className="flex-1">
+            <label htmlFor="grams" className="self-center">
+              In Grams
+            </label>
+            <input
+              type="text"
+              value={grams}
+              readOnly
+              placeholder="Quantity in grams"
+              className="mt-2 block w-full rounded-md border border-gray-300 px-4 py-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            />
+          </div>
+          <div className="flex-1">
+            <label htmlFor="currency" className="self-center">
+              In Currency
+            </label>
             <div className="flex-1">
-              <label htmlFor="grams" className="self-center">
-                In Grams
-              </label>
-              <input
-                type="text"
-                value={grams}
-                readOnly
-                placeholder="Quantity in grams"
+              <select
+                id="currency"
+                value={selectedCurrency}
+                onChange={handleSelectChange}
                 className="mt-2 block w-full rounded-md border border-gray-300 px-4 py-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
-              />
+              >
+                <option value="bdt">BDT</option>
+                <option value="dollar">Dollar</option>
+              </select>
             </div>
           </div>
         </div>
