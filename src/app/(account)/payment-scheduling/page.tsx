@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import RecurringBuyTable from "@/components/core/RecurringBuyTable";
 
 export default function PaymentScheduling() {
   const [activeTab, setActiveTab] = useState("loanPayment");
@@ -45,6 +46,8 @@ export default function PaymentScheduling() {
           {activeTab === "newRent" && <NewRentSchedule />}
         </div>
       </div>
+      {/* Recurring Buy */}
+       <RecurringBuyTable />
     </div>
   );
 }
