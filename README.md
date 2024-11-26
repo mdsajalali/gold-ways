@@ -1,36 +1,49 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+flowchart TD
+    A[App Launch] --> B{User Status}
+    B --> |New User| C[Onboarding Flow]
+    B --> |Existing User| D[Login/Authentication]
+    
+    C --> C1[Welcome Screen]
+    C --> C2[KYC Registration]
+    C --> C3[Preference Setup]
+    C --> C4[Tutorial/Walkthrough]
+    C4 --> D
+    
+    D --> |Authentication Successful| E[Home Dashboard]
+    D --> |Authentication Failed| D1[Reset Password/Retry]
+    
+    E --> F{User Action}
+    F --> |Portfolio Management| G[View/Manage Holdings]
+    F --> |Exchange Transaction| H[Exchange Hub]
+    F --> |Explore Markets| I[Market Data & Rates]
+    F --> |Check Offers| J[Personalized Offers]
+    F --> |Account Settings| K[User Profile/Settings]
+    
+    G --> G1[Buy Assets]
+    G --> G2[Sell Assets]
+    G --> G3[Gift/Transfer Assets]
+    
+    H --> H1[Currency Exchange]
+    H --> H2[Metal-to-Metal Exchange]
+    H --> H3[Mixed Exchange Scenarios]
+    H3 --> H4[Real-time Rate Calculation]
+    
+    I --> I1[Price Graphs]
+    I --> I2[Exchange Rates]
+    I --> I3[Custom Alerts Setup]
+    
+    J --> J1[Partner Offers]
+    J --> J2[Promotional Banners]
+    J --> J3[Personalized Recommendations]
+    
+    K --> K1[Profile Management]
+    K --> K2[Security Settings]
+    K --> K3[Notification Preferences]
+    K --> K4[Support/Help Center]
+    
+    H4 --> L[Transaction Confirmation]
+    L --> M[Transaction Processing]
+    M --> N[Transaction Receipt/Confirmation]
+    N --> E
 
-## Getting Started
-
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+    
