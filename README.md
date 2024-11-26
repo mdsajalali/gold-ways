@@ -1,4 +1,5 @@
 flowchart TD
+
     A[App Launch] --> B{User Status}
     B --> |New User| C[Onboarding Flow]
     B --> |Existing User| D[Login/Authentication]
@@ -45,5 +46,3 @@ flowchart TD
     L --> M[Transaction Processing]
     M --> N[Transaction Receipt/Confirmation]
     N --> E
-
-    
