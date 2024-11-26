@@ -12,13 +12,7 @@ export default function Page() {
   };
 
   return (
-    <div
-      className="relative flex min-h-screen items-center justify-center bg-cover bg-center px-5"
-      style={{ backgroundImage: "url('/login_banner.jpg')" }}
-    >
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-black opacity-50" />
-
+    <div className="relative flex min-h-screen items-center justify-center bg-cover bg-center px-5">
       <div className="relative z-10 mx-auto w-full rounded-lg bg-white/40 p-6 shadow-md md:w-1/2 lg:w-1/3">
         <h1 className="mb-4 text-center text-2xl font-bold">
           Sign up to Ways Gold
@@ -70,7 +64,7 @@ export default function Page() {
           <Link href={"/otp"}>
             <button
               type="submit"
-              className="mt-4 inline-flex w-full cursor-pointer items-center justify-center rounded-md border border-transparent bg-black px-4 py-3 text-base font-medium leading-6 text-amber-100 duration-300 hover:bg-yellow-500 hover:text-black focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2"
+              className="mt-4 inline-flex w-full cursor-pointer items-center justify-center rounded-md border border-transparent bg-sand-lite px-4 py-3 text-base font-bold leading-6 text-zinc-900 duration-300 hover:bg-sand-deep hover:text-black"
             >
               Registration
             </button>
@@ -78,7 +72,7 @@ export default function Page() {
           <div className="mt-5 flex flex-col items-center">
             <Link
               href={"/support-contact"}
-              className="ml-1 text-[14px] font-medium text-black underline"
+              className="ml-1 text-[14px] font-medium text-zinc-600 underline"
             >
               Contact customer support
             </Link>

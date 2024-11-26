@@ -59,6 +59,10 @@ const config: Config = {
           "4": "hsl(var(--chart-4))",
           "5": "hsl(var(--chart-5))",
         },
+        sand: {
+          deep: "#D3BA89",
+          lite: "#EDD7AE",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
