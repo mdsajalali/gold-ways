@@ -21,34 +21,39 @@ import {
   ChartTooltip,
   ChartTooltipContent,
 } from "@/components/ui/chart";
-
+import { GitGraph } from 'lucide-react';
 const data = [
-  { month: "Jan 23", series1: 2900, series2: 2300 },
-  { month: "Mar 23", series1: 2800, series2: 2100 },
-  { month: "May 23", series1: 3300, series2: 2200 },
-  { month: "Jul 23", series1: 3200, series2: 1900 },
-  { month: "Sep 23", series1: 2800, series2: 2400 },
-  { month: "Nov 23", series1: 5200, series2: 5800 },
+  { month: "Jan 23", gold22karat: 2900, gold24karat: 2300 },
+  { month: "Mar 23", gold22karat: 2800, gold24karat: 2100 },
+  { month: "May 23", gold22karat: 3300, gold24karat: 2200 },
+  { month: "Jul 23", gold22karat: 3200, gold24karat: 1900 },
+  { month: "Sep 23", gold22karat: 2800, gold24karat: 2400 },
+  { month: "Nov 23", gold22karat: 5200, gold24karat: 5800 },
 ];
 
 export default function ShadcnChart() {
   return (
-    <div className="p-4">
-      <Card className="shadow-md">
-        <CardHeader>
-          <CardDescription>Comparison of the previous rate</CardDescription>
+    <div className="pb-8">
+      <Card className="shadow-md ">
+        <CardHeader className="bg-[#EDD7AE] mb-2">
+          <CardDescription >
+          <h2 className="text-xl font-semibold text-gray-800 flex items-center">
+          <GitGraph className="h-6 w-6 mr-2" />
+          Comparision
+        </h2>
+          </CardDescription>
         </CardHeader>
 
         <CardContent>
           <ChartContainer
             config={{
-              series1: {
+              gold22karat: {
                 label: "Gold",
-                color: "hsl(38, 92%, 50%)",
+                color: "#D3BA89",
               },
-              // series2: {
+              // gold24karat: {
               //   label: "Series 2",
-              //   color: "hsl(150, 100%, 40%)",
+              //   color: "#EDD7AE",
               // },
             }}
             className=""
@@ -85,12 +90,12 @@ export default function ShadcnChart() {
                   <linearGradient id="colorSeries1" x1="0" y1="0" x2="0" y2="1">
                     <stop
                       offset="5%"
-                      stopColor="hsl(38, 92%, 50%)"
+                      stopColor="#D3BA89"
                       stopOpacity={0.8}
                     />
                     <stop
                       offset="95%"
-                      stopColor="hsl(38, 92%, 50%)"
+                      stopColor="#D3BA89"
                       stopOpacity={0.1}
                     />
                   </linearGradient>
@@ -101,8 +106,8 @@ export default function ShadcnChart() {
                 </defs>
                 <Area
                   type="monotone"
-                  dataKey="series1"
-                  stroke="hsl(38, 92%, 50%)"
+                  dataKey="gold22karat"
+                  stroke="#D3BA89"
                   strokeWidth={2}
                   fillOpacity={1}
                   fill="url(#colorSeries1)"
@@ -111,8 +116,8 @@ export default function ShadcnChart() {
                 />
                 <Area
                   type="monotone"
-                  dataKey="series2"
-                  stroke="hsl(150, 100%, 40%)"
+                  dataKey="gold24karat"
+                  stroke="#EDD7AE"
                   strokeWidth={2}
                   fillOpacity={1}
                   fill="url(#colorSeries2)"
@@ -125,7 +130,7 @@ export default function ShadcnChart() {
         </CardContent>
 
         {/* Select Box */}
-        <div className="my-5 flex items-center gap-5 px-2">
+        {/* <div className="my-5 flex items-center gap-5 px-2">
           <label htmlFor="" className="mt-2">
             Select Type
           </label>
@@ -140,7 +145,7 @@ export default function ShadcnChart() {
               <option value="gold18">18K GOLD</option>
             </select>
           </div>
-        </div>
+        </div> */}
       </Card>
     </div>
   );
