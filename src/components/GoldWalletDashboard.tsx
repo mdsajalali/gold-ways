@@ -7,6 +7,8 @@ import {
   PlusIcon,
   CalculatorIcon,
   TagIcon,
+  ShoppingCartIcon,
+  BanknoteIcon,
 } from "lucide-react";
 import ExchangeCalculator from "./ExchangeCalculator";
 import TodaysMarketPrice from "./TodaysMarketPrice";
@@ -14,7 +16,6 @@ import ShadcnChart from "./core/ShadcnCharts";
 const GoldWalletDashboard = () => {
   return (
     <div className="mb-20 min-h-screen bg-white px-2 py-4 font-sans text-[#333333]">
-      {/* Profile Section */}
       <section className="mb-8 flex items-center justify-between rounded-md bg-neutral-50 p-4 shadow-md">
         <div className="mr-4 h-16 w-16 rounded-full bg-[#D3BA89]"></div>
         <div>
@@ -23,7 +24,6 @@ const GoldWalletDashboard = () => {
         </div>
       </section>
 
-      {/* Current Assets Section */}
       <section className="mb-8 rounded-lg bg-[#EDD7AE] p-6 shadow-md">
         <h2 className="mb-4 text-xl font-semibold">Your Assets</h2>
         <div className="mb-2 flex items-center justify-between">
@@ -37,27 +37,25 @@ const GoldWalletDashboard = () => {
         <div className="text-sm text-green-600">+0.25% (৳315.21) Today</div>
       </section>
 
-      {/* Quick Actions */}
-      <section className="mb-8 grid grid-cols-2 gap-4">
-        <button className="flex flex-col items-center rounded-lg bg-[#D3BA89] p-4 text-white shadow-md">
-          <ArrowUpIcon className="mb-2 h-6 w-6" />
+      <section className="mb-8 grid grid-cols-2 gap-2">
+        <button className="flex items-center justify-center rounded-lg bg-[#D3BA89] p-4 text-white shadow-md">
+          <ShoppingCartIcon className="mr-2 h-6 w-6" />
           <span>Buy</span>
         </button>
-        <button className="flex flex-col items-center rounded-lg bg-[#D3BA89] p-4 text-white shadow-md">
-          <ArrowDownIcon className="mb-2 h-6 w-6" />
+        <button className="flex items-center justify-center rounded-lg bg-[#D3BA89] p-4 text-white shadow-md">
+          <BanknoteIcon className="mr-2 h-6 w-6" />
           <span>Sell</span>
         </button>
-        <button className="flex flex-col items-center rounded-lg bg-[#D3BA89] p-4 text-white shadow-md">
-          <GiftIcon className="mb-2 h-6 w-6" />
+        <button className="flex items-center justify-center rounded-lg bg-[#D3BA89] p-4 text-white shadow-md">
+          <GiftIcon className="mr-2 h-6 w-6" />
           <span>Gift</span>
         </button>
-        <button className="flex flex-col items-center rounded-lg bg-[#D3BA89] p-4 text-white shadow-md">
-          <RepeatIcon className="mb-2 h-6 w-6" />
+        <button className="flex items-center justify-center rounded-lg bg-[#D3BA89] p-4 text-white shadow-md">
+          <RepeatIcon className="mr-2 h-6 w-6" />
           <span>Exchange</span>
         </button>
       </section>
 
-      {/* Exchange Rate Calculator */}
       <section className="mb-8 rounded-lg bg-[#EDD7AE] p-6 shadow-md">
         <h2 className="mb-4 flex items-center text-xl font-semibold">
           <CalculatorIcon className="mr-2 h-6 w-6" />
@@ -66,10 +64,8 @@ const GoldWalletDashboard = () => {
         <ExchangeCalculator />
       </section>
 
-      {/* Graph Section*/}
       <ShadcnChart />
 
-      {/* Offers Section */}
       <section className="mb-8 rounded-lg bg-[#EDD7AE] p-6 shadow-md">
         <h2 className="mb-4 flex items-center text-xl font-semibold">
           <TagIcon className="mr-2 h-6 w-6" />
@@ -89,7 +85,6 @@ const GoldWalletDashboard = () => {
         </div>
       </section>
 
-      {/* Today's Market Price */}
       <TodaysMarketPrice />
     </div>
   );

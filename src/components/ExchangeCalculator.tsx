@@ -1,101 +1,123 @@
 "use client";
 
-import { useState } from "react";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
-import { Input } from "@/components/ui/input";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
+import { Switch } from "@/components/ui/switch";
+import { Link2Icon } from "lucide-react";
 
 export default function ExchangeCalculator() {
+  const [isGrams, setIsGrams] = useState(false);
   const [amount, setAmount] = useState("");
-  const [currency, setCurrency] = useState("BDT");
-  const [grams, setGrams] = useState("");
   const [result, setResult] = useState("");
 
-  const currencies = [
-    { value: "BDT", label: "BDT" },
-    { value: "USD", label: "USD" },
-  ];
+  // Fake conversion rates
+  const GOLD_RATE = 12008; // price per gram
+  const VAT = 0.03; // 3% VAT
 
-  const handleExchange = () => {
-    // This is a placeholder calculation. Replace with actual exchange rate logic.
-    const exchangeRate = currency === "BDT" ? 12008 : 140; // Assuming 1g = 12008 BDT or 140 USD
-    const calculatedResult =
-      parseFloat(amount) / (parseFloat(grams) * exchangeRate);
-    setResult(calculatedResult.toFixed(2));
+  const calculateResult = (value: string, inGrams: boolean) => {
+    const numValue = parseFloat(value) || 0;
+    if (inGrams) {
+      // Converting from grams to BDT
+      const bdt = numValue * GOLD_RATE * (1 + VAT);
+      setResult(
+        bdt.toLocaleString("en-IN", { maximumFractionDigits: 2 }) + " TK",
+      );
+    } else {
+      // Converting from BDT to grams
+      const grams = numValue / (GOLD_RATE * (1 + VAT));
+      setResult(grams.toFixed(4) + " grams");
+    }
   };
 
+  const handleAmountChange = (value: string) => {
+    setAmount(value);
+    calculateResult(value, isGrams);
+  };
+
+  const handleQuickAdd = (addAmount: number) => {
+    const newAmount = (parseFloat(amount) || 0) + addAmount;
+    setAmount(newAmount.toString());
+    calculateResult(newAmount.toString(), isGrams);
+  };
+
+  const handleToggle = (checked: boolean) => {
+    setIsGrams(checked);
+    calculateResult(amount, checked);
+  };
+
+  useEffect(() => {
+    calculateResult(amount, isGrams);
+  }, [isGrams]);
+
   return (
-    <div className="space-y-4">
-      <div className="space-y-2">
-        <label htmlFor="amount" className="text-sm font-medium">
-          Amount
-        </label>
-        <Input
-          id="amount"
-          type="number"
-          placeholder="Enter amount"
-          value={amount}
-          onChange={(e) => setAmount(e.target.value)}
-          className="border-[#D3BA89]"
+    <div className="rounded-xl bg-white p-6 text-black">
+      <div className="mb-6 flex items-center justify-between">
+        <div className="flex items-center gap-2">
+          <Link2Icon className="h-4 w-4 text-[#D3BA89]" />
+          <span className={isGrams ? "text-gray-500" : "text-black"}>BDT</span>
+        </div>
+        <Switch
+          checked={isGrams}
+          onCheckedChange={handleToggle}
+          className="bg-gray-200"
         />
+        <div className="flex items-center gap-2">
+          <Link2Icon className="h-4 w-4 text-[#D3BA89]" />
+          <span className={!isGrams ? "text-gray-500" : "text-black"}>
+            In Grams
+          </span>
+        </div>
       </div>
 
-      <div className="space-y-2">
-        <label htmlFor="currency" className="text-sm font-medium">
-          Currency
-        </label>
-        <Select value={currency} onValueChange={setCurrency}>
-          <SelectTrigger id="currency" className="border-[#D3BA89]">
-            <SelectValue placeholder="Select currency" />
-          </SelectTrigger>
-          <SelectContent>
-            {currencies.map((curr) => (
-              <SelectItem key={curr.value} value={curr.value}>
-                {curr.label}
-              </SelectItem>
-            ))}
-          </SelectContent>
-        </Select>
+      <input
+        type="number"
+        value={amount}
+        onChange={(e) => handleAmountChange(e.target.value)}
+        className="mb-4 w-full rounded-lg bg-gray-100 py-2 text-center text-2xl text-black"
+        placeholder={isGrams ? "Enter grams" : "Enter amount in BDT"}
+      />
+
+      <div className="mb-4 text-center text-2xl">=</div>
+
+      <div className="mb-6 text-center text-2xl font-bold text-[#D3BA89]">
+        {result || (isGrams ? "0.00 TK" : "0.0000 grams")}
       </div>
 
-      <div className="space-y-2">
-        <label htmlFor="grams" className="text-sm font-medium">
-          Grams
-        </label>
-        <Input
-          id="grams"
-          type="number"
-          placeholder="Enter grams"
-          value={grams}
-          onChange={(e) => setGrams(e.target.value)}
-          className="border-[#D3BA89]"
-        />
+      <div className="mb-6 flex gap-2">
+        <Button
+          onClick={() => handleQuickAdd(isGrams ? 1 : 1000)}
+          variant="outline"
+          className="flex-1 bg-gray-100 text-black hover:bg-gray-200"
+        >
+          + {isGrams ? "1.00" : "1,00.00"}
+        </Button>
+        <Button
+          onClick={() => handleQuickAdd(isGrams ? 3 : 3000)}
+          variant="outline"
+          className="flex-1 bg-gray-100 text-black hover:bg-gray-200"
+        >
+          + {isGrams ? "3.00" : "3,00.00"}
+        </Button>
+        {/* <Button
+          onClick={() => handleQuickAdd(isGrams ? 5 : 5000)}
+          variant="outline"
+          className="flex-1 bg-gray-100 text-black hover:bg-gray-200"
+        >
+          + {isGrams ? '5.00' : '5,000.00'}
+        </Button> */}
       </div>
 
-      <Button
-        onClick={handleExchange}
-        className="w-full bg-[#D3BA89] text-white hover:bg-[#C1A677]"
-      >
-        Exchange
+      <div className="mb-6 text-center text-sm text-gray-500">
+        (Includes 3% VAT)
+      </div>
+
+      <Button className="w-full bg-[#D3BA89] py-6 text-white hover:bg-[#C1A677]">
+        <Link2Icon className="mr-2 h-4 w-4" />
+        BUY GOLD
       </Button>
 
-      <div className="space-y-2">
-        <label htmlFor="result" className="text-sm font-medium">
-          Total Price
-        </label>
-        <Input
-          id="result"
-          type="text"
-          value={result}
-          readOnly
-          className="border-[#D3BA89] bg-gray-100"
-        />
+      <div className="mt-4 text-center text-sm text-gray-500">
+        Buy 24K, 999.9 purity guaranteed by AL-Hasan
       </div>
     </div>
   );

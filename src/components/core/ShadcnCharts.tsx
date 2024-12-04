@@ -39,7 +39,7 @@ export default function ShadcnChart() {
           <CardDescription >
           <h2 className="text-xl font-semibold text-gray-800 flex items-center">
           <GitGraph className="h-6 w-6 mr-2" />
-          Comparision
+          Yearly Price Map
         </h2>
           </CardDescription>
         </CardHeader>
@@ -114,7 +114,7 @@ export default function ShadcnChart() {
                   dot={false}
                   activeDot={{ r: 8 }}
                 />
-                <Area
+                {/* <Area
                   type="monotone"
                   dataKey="gold24karat"
                   stroke="#EDD7AE"
@@ -123,7 +123,7 @@ export default function ShadcnChart() {
                   fill="url(#colorSeries2)"
                   dot={false}
                   activeDot={{ r: 8 }}
-                />
+                /> */}
               </AreaChart>
             </ResponsiveContainer>
           </ChartContainer>
